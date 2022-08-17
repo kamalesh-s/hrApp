@@ -1,0 +1,81 @@
+
+ <!----Desktop Navigation-->
+ <div class="sideNav desktopNav">
+    <div class="navTopContent ">
+         <div class="logo">
+            <img [src]="logoimage" alt="">
+        </div> 
+        <div class="userprofile">
+            <div class="profileImg">
+                <img [src]="profileimage" alt="">
+            </div>
+            <div class="profileContent">
+                <h2 class="navTitle ">Intellifer Systems</h2>
+                <h3 class="navSubtitle subTitle">Marketing</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="pagesNav">
+
+        <div class="sidenavDropdown">
+            <a class="navHeading"><mat-icon>dashboard</mat-icon> Dashboard</a>
+            <a class="navHeading" routerLinkActive="active" routerLink="/ltvlEmployee"><mat-icon>supervisor_account</mat-icon>LTVL Employee</a>
+            <a class="navHeading" routerLinkActive="active" routerLink="/naps"><mat-icon>account_circle</mat-icon>NAPS Employee</a>
+            <a class="navHeading" routerLinkActive="active" routerLink="/department"><mat-icon>account_balance</mat-icon>Department</a> 
+             <a class="navHeading" routerLinkActive="active" routerLink="/skill"><mat-icon>local_library</mat-icon>Skill</a> 
+            <a class="navHeading" routerLinkActive="active" routerLink="/productGroup&Line"><mat-icon>place</mat-icon>Product Group & Line</a>
+            <a class="navHeading" routerLinkActive="active" routerLink="/skillMapping"><mat-icon>library_books</mat-icon>Skill Mapping</a>
+            <a class="navHeading" routerLinkActive="active" routerLink="/trainingRecommendation"><mat-icon>training</mat-icon>Training Recommendation</a> 
+
+        </div>
+
+    </div>
+</div>
+
+<!--Tablet Navigation-->
+<div class="sideNav tabNav">
+    <div class="navTopContent ">
+        <div class="logo">
+            <img src="assests/img/image-removebg-preview (17).png">
+        </div>
+        <div id="mySidenav" class="mysidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></a>
+            <div class="logo">
+                <img src="assests/img/logoFinal.png">
+            </div>
+            <div class="profileImg">
+                <img src="assests/img/profile-pic-2.jpg">
+            </div>
+            <div class="profileContent">
+                <h2 class="navTitle ">Intellifer Systems</h2>
+                <h3 class="navSubtitle subTitle">Marketing</h3>
+            </div>
+            <div class="iconWrapper">
+                <i class="fa-solid fa-bell"></i>
+                <i class="fa-solid fa-gear"></i>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </div>
+
+
+            <div class="pagesNav">
+
+                <div class="sidenavDropdown">
+
+                    <a href="dashboard.html" class="navHeading"><i class="fa-solid fa-gauge"></i>Dashboard</a>
+                    <a href="ltvlMaster.html" class="navHeading"><i class="fa-solid fa-users"></i>LTVL Users</a>
+                    <a href="naps.html" class="navHeading"><i class="fa-solid fa-users-gear"></i>NAPS Users</a>
+                    <a href="departmentMaster.html" class="navHeading"><i class="fa-solid fa-landmark"></i>Department Master</a>
+                    <a href="skillMaster.html" class="navHeading"><i class="fa-solid fa-user-graduate"></i>Skill Master</a>
+                    <a href="locationSupervisor.html" class="navHeading"><i class="fa-solid fa-industry"></i>Product Group & Line</a>
+                    <a href="trainingCreation.html" class="navHeading"><i class="fa-solid fa-chalkboard-user"></i>Training Recommendation</a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+

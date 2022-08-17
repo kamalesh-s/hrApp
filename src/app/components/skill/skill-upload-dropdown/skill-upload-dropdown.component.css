@@ -1,0 +1,68 @@
+.mat-form-field-flex {
+    color: red;
+}
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding-top: 5px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    opacity: 1;
+    color: white;
+}
+.dropDownBtn{
+    color:white;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #f8f9fa !important;
+}
+.not-empty-select.mat-selected {
+    color: green !important;
+  }
+  
+  :host /deep/ .mat-select-value-text {
+    color: green !important;
+  }
+  
+/* single Upload */
+.singleUploadForm ,.mat-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.formLeftContent ,.formRightContent{
+  width: 46%;
+  display: flex;
+  flex-direction: column;
+}
+h2.CustomTitle{
+  margin-bottom: 15px !important;
+  text-align: left;
+}
+.mat-button.mat-primary{
+  color: white;
+  background-color: #043F6F;
+}
+.formContainer {
+  border: 1px solid black;
+  padding: 20px;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex{
+  height: 45px;
+}
+h2.CustomTitle{
+  margin-bottom: 15px !important;
+  text-align: left;
+}
+.mat-button.mat-primary{
+  color: white;
+  background-color: #043F6F;
+}
+.popupContentWrapper{
+  width: 450px;
+}
+.uploadIcon{
+  font-size: 33px;
+  margin-bottom: 10px;
+  color: #043F6F;
+}

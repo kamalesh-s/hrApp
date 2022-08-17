@@ -1,0 +1,82 @@
+
+<!--upload dropdown field-->
+<mat-form-field class="dropDownBtn" appearance='outline'>
+  <mat-select name="countryReactiveVaraible"  placeholder="+ Add Skill">
+    <mat-option (click)="singleUploadDialog(skillsingleUploadPopup)">Single Upload</mat-option>
+    <mat-option (click)="BulkUploadDialog(skilbulkUploadPopup)"> Bulk Upload</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!--Single upload-->
+<ng-template #skillsingleUploadPopup>
+  <div class="popUpContainer">
+    <h2 class="navTitle CustomTitle">Create Skill</h2>
+    <div class="formContainer">
+      <!-- <form #f = "ngForm" name="form" (submit)="onSubmit(f)"> -->
+      <div class="singleUploadForm">
+       
+        <div class="formLeftContent" >
+          <mat-form-field appearance="fill">
+            <mat-label>Skill ID</mat-label>
+             <input   name="employee_name" matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label >Skill Name</mat-label>
+            <!-- <input  [(ngModel)]="EmpData.ps_number" name="ps_number" matInput > -->
+            <input  name="ps_number" matInput >
+          </mat-form-field>
+         
+       
+        </div>
+        <div class="formRightContent">
+
+          <mat-form-field appearance="fill">
+            <mat-label>Skill Definition</mat-label>
+            <input  name="email" matInput >
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Skill Criticality</mat-label>
+            <input   name="mobile" matInput >
+          </mat-form-field>
+        
+        </div>
+     
+      </div>
+    </div>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-button  color="primary" (click)="addLtvlEmployeeData()" cdkFocusInitial>Save</button>
+    </mat-dialog-actions>
+     </div> 
+
+</ng-template>
+
+<!--Bulk Upload-->
+<ng-template #skilbulkUploadPopup>
+
+  <div class="popUpContainer">
+    <h2 class="navTitle CustomTitle">Attach Your Documents</h2>
+    <div class="popupContentWrapper">
+        <div class="popupContentContainer">
+            <div class="dragContainer">
+                <div class="dragContent">
+                    <!-- <fa-icon [icon] ="faCloudArrowUp" class="uploadIcon">UPLOAD</fa-icon> -->
+                    <h3>Drag and drop here<br>or</h3>
+                     <button class="browseFilesBtn">Browse files</button> 
+                    <!-- <h3 class="dropFileBtn">Browse Files</h3> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
+        <button mat-button color="primary">Upload</button>
+      </mat-dialog-actions>
+    </div>
+    
+</ng-template>
+
+<div>
+
+  

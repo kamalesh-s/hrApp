@@ -1,0 +1,28 @@
+{
+    "getAllEmployeeData": [
+        {
+            "psNumber": 1,
+            "name": "emp1",
+            "departmentName": "dep1",
+            "departmentId": 1,
+            "supervisorEmployeeId": null,
+            "immediateSupervisorEmployeeName": null,
+            "emailAddress": "string",
+            "mobilePhoneNumber": "string",
+            "createdOrUpdatedBy": "string",
+            "plantLocation": "string"
+        },
+        {
+            "psNumber": 2,
+            "name": "emp2",
+            "departmentName": "dep1",
+            "departmentId": 1,
+            "supervisorEmployeeId": 1,
+            "immediateSupervisorEmployeeName": "emp1",
+            "emailAddress": "string",
+            "mobilePhoneNumber": "string",
+            "createdOrUpdatedBy": "string",
+            "plantLocation": "string"
+        }
+    ]
+}
