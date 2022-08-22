@@ -17,10 +17,9 @@
     </div>
 
     <div class="pagesNav">
-
         <div class="sidenavDropdown">
-            <a class="navHeading"><mat-icon>dashboard</mat-icon> Dashboard</a>
-            <a class="navHeading" routerLinkActive="active" routerLink="/ltvlEmployee"><mat-icon>supervisor_account</mat-icon>LTVL Employee</a>
+            <a class="navHeading" routerLinkActive="active" routerLink="/dashboard"><mat-icon>dashboard</mat-icon> Dashboard</a>
+            <a class="navHeading" routerLinkActive="active" routerLink="/ltvEmployee"><mat-icon>supervisor_account</mat-icon>LTV Employee</a>
             <a class="navHeading" routerLinkActive="active" routerLink="/naps"><mat-icon>account_circle</mat-icon>NAPS Employee</a>
             <a class="navHeading" routerLinkActive="active" routerLink="/department"><mat-icon>account_balance</mat-icon>Department</a> 
              <a class="navHeading" routerLinkActive="active" routerLink="/skill"><mat-icon>local_library</mat-icon>Skill</a> 
@@ -37,10 +36,11 @@
 <div class="sideNav tabNav">
     <div class="navTopContent ">
         <div class="logo">
-            <img src="assests/img/image-removebg-preview (17).png">
+            <img [src]="tablogoimage" alt="">
         </div>
-        <div id="mySidenav" class="mysidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></a>
+   
+         <div id="mySidenav"  #mySidenav class="mysidenav">
+            <a href="javascript:void(0)" class="closebtn" (click)="sidebarShow = !sidebarShow"><i class="fa-solid fa-xmark"></i></a>
             <div class="logo">
                 <img src="assests/img/logoFinal.png">
             </div>
@@ -50,11 +50,6 @@
             <div class="profileContent">
                 <h2 class="navTitle ">Intellifer Systems</h2>
                 <h3 class="navSubtitle subTitle">Marketing</h3>
-            </div>
-            <div class="iconWrapper">
-                <i class="fa-solid fa-bell"></i>
-                <i class="fa-solid fa-gear"></i>
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
             </div>
 
 
@@ -73,7 +68,12 @@
                 </div>
             </div>
 
+        </div> 
+
+        <div class="menuNav" (click)="sidebarShow = !sidebarShow">
+            <mat-icon>menu</mat-icon>
         </div>
+        
     </div>
 
 </div>

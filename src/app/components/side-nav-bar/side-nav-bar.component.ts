@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 //import { faBell,faUser,faGear,faGauge,faUserGear,faLandmark,faUserGraduate,faIndustry,faChalkboardUser,faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-side-nav-bar',
@@ -9,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class SideNavBarComponent implements OnInit {
   
   logoimage:string = "assets/img/logoFinal.png";
+  tablogoimage:string ="assets/img/tabLogo.png";
   profileimage:string ="assets/img/profile-pic-2.jpg";
+  sidebar: any;
 
   // faBell = faBell;
   // faUser = faUser;
@@ -22,9 +25,15 @@ export class SideNavBarComponent implements OnInit {
   // faChalkboardUser = faChalkboardUser;
   // faArrowRightFromBracket = faArrowRightFromBracket;
 
+  public sidebarShow: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  mySidenavopen(){
+    
   }
 
 }

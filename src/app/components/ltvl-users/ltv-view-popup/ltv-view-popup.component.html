@@ -1,1 +1,63 @@
-<p>ltv-view-popup works!</p>
+
+ <!--View Employee Detail Popup-->
+    <div class="popUpContainer userDetail" >
+      <div class="appPopupContainer"></div>
+      <h2 class="navTitle CustomTitle">Employee Details</h2>
+      <div class="popUpContentWrapper">
+          <div class="userProfile">
+              <img [src]="profileimage" alt="">
+          </div>
+          <div class="userDetails">
+              <div class="popupContentLeft" >
+                  <div class="popupContent">
+                      <h3 class="popupSubTitle  inputDetail">Employee Name :</h3> 
+                      <h3 class="popupSubTitle"> </h3>
+                      
+                  </div>
+                  <div class="popupContent">
+                      <h3 class="popupSubTitle inputDetail">PS Number :</h3>
+                      <h3 class="popupSubTitle">878765674 </h3>
+                  </div>
+                  
+                  <div class="popupContent">
+                      <h3 class="popupSubTitle inputDetail ">Email :</h3>
+                      <h3 class="popupSubTitle ">amar@gmail.in </h3>
+                  </div>
+                 
+                  <div class="popupContent">
+                      <h3 class="popupSubTitle inputDetail lastChild">Mobile :</h3>
+                      <h3 class="popupSubTitle lastChild">8787654320 </h3>
+                  </div>
+                 
+                  </div>
+                  <div class="popupContentRight">
+                      
+                  <div class="popupContent">
+                      <h3 class="popupSubTitle inputDetail">Department Name :</h3>
+                      <h3 class="popupSubTitle">Intellifer </h3>
+                      
+                  </div>
+                  
+                  <div class="popupContent">
+                      <h3 class="popupSubTitle inputDetail">Plant Location :</h3>
+                      <h3 class="popupSubTitle">Location-A </h3>
+                      
+                  </div>
+                  <div class="popupContent">
+                      <h3 class="popupSubTitle inputDetail lastChild">IS :</h3>
+                      <h3 class="popupSubTitle lastChild">SSS </h3>
+                     
+                  </div>
+                 
+                 
+                  
+              </div>
+  
+          </div>
+      </div>
+  
+  <mat-dialog-actions align="end">
+      <!-- <button mat-button mat-dialog-close>Cancel</button> -->
+      <button mat-button  [mat-dialog-close]="true" color="primary"  cdkFocusInitial>Close</button>
+    </mat-dialog-actions>
+  </div>      

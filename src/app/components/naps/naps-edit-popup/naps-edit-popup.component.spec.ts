@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteModalComponent } from './delete-modal.component';
+import { NapsEditPopupComponent } from './naps-edit-popup.component';
 
-describe('DeleteModalComponent', () => {
-  let component: DeleteModalComponent;
-  let fixture: ComponentFixture<DeleteModalComponent>;
+describe('NapsEditPopupComponent', () => {
+  let component: NapsEditPopupComponent;
+  let fixture: ComponentFixture<NapsEditPopupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteModalComponent ]
+      declarations: [ NapsEditPopupComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DeleteModalComponent);
+    fixture = TestBed.createComponent(NapsEditPopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

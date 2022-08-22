@@ -1,1 +1,114 @@
-<p>ltv-edit-popup works!</p>
+
+
+<!--Employee Detail Edit popup-->
+<!-- <ng-template #ltvlEmployeeEditPopup> -->
+      
+    <div class="popUpContainer" >
+    <h2 class="navTitle CustomTitle">Edit Employee</h2>
+    <div class="formContainer">
+  
+
+    <!-- <div [formGroup]="updateFormValue" class="formContentWrapper"> -->
+      <!-- <div class="formLeftContent">
+        <mat-form-field  appearance="fill">
+        <mat-label>Employee Name</mat-label>
+        <input formControlName="name"   id="name" matInput>
+        </mat-form-field>
+  
+        <mat-form-field  appearance="fill">
+        <mat-label>PS Number</mat-label>
+        <input formControlName="psNumber"  name="psNumber" id="psNumber" matInput >
+        </mat-form-field>
+        <mat-form-field  appearance="fill">
+        <mat-label  >Email</mat-label>
+        <input  formControlName="emailAddress" name="emailAddress" id="emailAddress" matInput >
+        </mat-form-field>
+        <mat-form-field  appearance="fill">
+        <mat-label>Mobile</mat-label>
+        <input formControlName="mobilePhoneNumber" name="mobilePhoneNumber" id="mobilePhoneNumber" matInput >
+        </mat-form-field>
+        </div> -->
+      
+      
+        <!-- <div class="formRightContent"  >
+        <mat-form-field   appearance="fill">
+        <mat-label>IS</mat-label>
+        <input formControlName="immediateSupervisorEmployeeName" name="immediateSupervisorEmployeeName" id="immediateSupervisorEmployeeName" matInput >
+        </mat-form-field>
+        <mat-form-field  appearance="fill">
+        <mat-label>Plant Location</mat-label>
+        <input formControlName="plantLocation" name="plantLocation" id="plantLocation" matInput >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-select placeholder="Department Name">
+            <mat-option *ngFor="let departmentName of departments" [value]="departmentName.value">
+              {{departmentName.viewValue}}
+            </mat-option>
+            <mat-option>
+              </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div> -->
+      
+  
+    <!-- </div> -->
+
+    <form > 
+      <div class="singleUploadForm">
+       
+          <div class="formLeftContent">
+            <form [formGroup]="updateFormValue">
+          <mat-form-field appearance="fill">
+            <mat-label>Employee Name</mat-label>
+             <input formControlName="name"   matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label >PS Number</mat-label>
+            <input formControlName="psNumber"   matInput >
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input formControlName="emailAddress"   matInput >
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Mobile</mat-label>
+            <input formControlName="mobilePhoneNumber"    matInput >
+          </mat-form-field>
+       </form>
+        </div>
+        
+        
+          <div class="formRightContent" >
+            <form [formGroup]="updateFormValue">
+          <mat-form-field appearance="fill">
+            <mat-label>Immediate Supervisor</mat-label>
+            <input formControlName="immediateSupervisorEmployeeName" matInput >
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Plant Location</mat-label>
+            <input formControlName="plantLocation"   matInput >
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-select formControlName="departmentName"  placeholder="Department Name">
+              <mat-option *ngFor="let departmentName of departments" [value]="departmentName.value">
+                {{departmentName.viewValue}} 
+              </mat-option>
+              
+            </mat-select>
+          </mat-form-field>
+        </form>
+        </div>
+     
+      </div>
+     </form>
+  
+    </div>
+  
+        <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+  
+        <button mat-button  [mat-dialog-close]="true" color="primary" (click)="updateLtvlEmployeeData()" cdkFocusInitial>Save</button>
+        </mat-dialog-actions>
+    </div>
+  
+    <!-- </ng-template> -->

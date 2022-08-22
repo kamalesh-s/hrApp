@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-ltv-view-popup',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LtvViewPopupComponent implements OnInit {
 
-  constructor() { }
+  profileimage:string ="assets/img/profile-pic-2.jpg";
+  
+  constructor() {
+    // public dialogRef: MatDialogRef<SampleDialogComponent>,
+
+    // @Inject(MAT_DIALOG_DATA) public data: any,
+    // { }
+   }
 
   ngOnInit(): void {
   }
+
+
+ 
 
 }

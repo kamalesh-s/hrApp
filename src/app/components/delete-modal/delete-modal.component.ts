@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {faTrashCan} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-delete-modal',
@@ -7,7 +6,6 @@ import {faTrashCan} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./delete-modal.component.css']
 })
 export class DeleteModalComponent implements OnInit {
-  faTrashCan= faTrashCan;
   constructor() { }
 
   ngOnInit(): void {

@@ -101,11 +101,7 @@ h2.CustomTitle{
     justify-content: space-between;
     width: 100%;
 }
-.formLeftContent ,.formRightContent{
-    width: 46%;
-    display: flex;
-    flex-direction: column;
-}
+
 h2.CustomTitle{
     margin-bottom: 15px !important;
     text-align: left;
@@ -328,4 +324,8 @@ h2.CustomTitle{
   font-size: 33px;
   margin-bottom: 10px;
   color: #043F6F;
+}
+
+.productGroupContent{
+    width: 100%;
 }

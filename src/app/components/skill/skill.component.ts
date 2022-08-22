@@ -7,12 +7,13 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LtvlEmployeeService } from 'src/app/services/ltvlEmployeeservice.service';
-//import { faPenToSquare , faTrash ,faTrashCan} from '@fortawesome/free-solid-svg-icons';
 import {Subscription} from 'rxjs';
 import {ShareDataService} from 'src/app/share-data.service';
 import { Skill } from 'src/app/interface/skill';
 import {MatTableModule} from '@angular/material/table';
-//import {EditModalComponent} from 'src/app/components/skill/edit-modal/edit-modal.component'
+import { DeleteModalComponent } from '../delete-modal/delete-modal.component';
+//import { EditModalComponent } from '../edit-modal/edit-modal.component';
+import {EditModalComponent} from 'src/app/components/skill/edit-modal/edit-modal.component'
 
 @Component({
   selector: 'app-skill-master',
@@ -25,13 +26,13 @@ export class SkillMasterComponent implements OnInit {
   dataSource!: MatTableDataSource<Skill>;
  // dataSource:any;
   displayedColumns: string[] = ['id','name', 'definition', 'criticalityLevel' ,'Actions'];
-  dialog: any;
 
-  constructor(private service:SkillService ,dialog :MatDialogModule) { }
+  constructor(private service:SkillService ,private dialog :MatDialog) { }
 
   ngOnInit(): void {
     this.getAllLtvlEmployeeData();
   }
+
 
   //GET EMPLOYEE DATA
 getAllLtvlEmployeeData() {
@@ -43,12 +44,14 @@ getAllLtvlEmployeeData() {
   });
 }
 
+
 editSkillPopup(){
-  this.dialog.open('EditModalComponent');
+  this.dialog.open(EditModalComponent);
 }
 deleteSkillPopup(){
-  this.dialog.open("DeleteModalComponent");
+  this.dialog.open(DeleteModalComponent);
 }
+
 //Edit Upload popup
 openEditDialog(templateRef: TemplateRef<any>) {
   this.dialog.open(templateRef);

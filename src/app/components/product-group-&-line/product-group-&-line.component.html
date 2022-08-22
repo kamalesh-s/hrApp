@@ -1,19 +1,18 @@
 
 
 <div class="topContent">
-    <h2 class="title CustomTitle mainTitle">LTVL Employee</h2>
+    <h2 class="title CustomTitle mainTitle">Product Group & Line</h2>
     <div class="topContent_btn">
       <button class="btn btn-secondary drop-Btn ExportBtn ">Download Template</button>
        
       
   <!--upload dropdown field-->
   <mat-form-field class="dropDownBtn" appearance='outline'>
-    <mat-select name="countryReactiveVaraible"  placeholder="+ Add Department">
+    <mat-select name="countryReactiveVaraible"  placeholder="+ Add Product Group">
       <mat-option (click)="napsSingleUploadDialog(napsSingleUploadPopup)">Single Upload</mat-option>
       <mat-option (click)="napsBulkUploadDialog(napsBulkUploadPopup)"> Bulk Upload</mat-option>
     </mat-select>
   </mat-form-field>
-  
   
   <!--Single upload-->
   <ng-template #napsSingleUploadPopup>
@@ -23,31 +22,25 @@
       <div class="formContainer">
          <!-- <form #f = "ngForm" name="form" (submit)="addLtvlEmployeeData(f)">  -->
          
-        <div class="singleUploadForm">
-          <form [formGroup]="formValue">
-          <div class="formLeftContent" >
+        <!-- <div class="singleUploadForm" [formGroup]="formValue"> -->
+            <div class="formLeftContent productGroupContent">  
             <mat-form-field appearance="fill">
-              <mat-label>Employee Name</mat-label>
+              <mat-label>Product Group</mat-label>
                <input  name="name" formControlName="name" matInput>
             </mat-form-field>
             <mat-form-field appearance="fill">
-              <mat-label >PS Number</mat-label>
+              <mat-label >Product Line</mat-label>
               <!-- <input  [(ngModel)]="EmpData.ps_number" name="ps_number" matInput > -->
               <input  name="psNumber" formControlName="psNumber" matInput >
             </mat-form-field>
             <mat-form-field appearance="fill">
-              <mat-label>Email</mat-label>
+              <mat-label>Supervisor Name</mat-label>
               <input  name="emailAddress"formControlName="emailAddress"  matInput >
             </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Mobile</mat-label>
-              <input  name="mobile" formControlName="mobilePhoneNumber"  matInput >
-            </mat-form-field>
          
-          </div>
-          </form>
-          <form [formGroup]="formValue">
-          <div class="formRightContent">
+          </div> 
+
+          <!-- <div class="formRightContent" [formGroup]="formValue">
             <mat-form-field appearance="fill">
               <mat-label>IS</mat-label>
               <input  name="immediateSupervisorEmployeeName" formControlName="immediateSupervisorEmployeeName" matInput >
@@ -65,17 +58,16 @@
               </mat-select>
             </mat-form-field>
           
-          </div>
-        </form>
+          </div> -->
        
         </div>
        
-      </div>
+      <!-- </div> -->
       <mat-dialog-actions align="end">
         <button mat-button mat-dialog-close>Cancel</button>
         <button mat-button  color="primary" (click)="addLtvlEmployee()" cdkFocusInitial>Save</button>
       </mat-dialog-actions>
-       </div> 
+         </div>  
   
   </ng-template>
   
@@ -84,8 +76,8 @@
   
     <div class="popUpContainer">
       <h2 class="navTitle CustomTitle">Attach Your Documents</h2>
-      <div class="popupContentWrapper">
-          <div class="popupContentContainer">
+      <div class="bulkUploadPopupContentWrapper popupContentWrapper">
+          <div class="bulkUploadPopupContainer popupContentContainer">
               <div class="dragContainer">
                   <div class="dragContent">
                       <!-- <fa-icon [icon] ="faCloudArrowUp" class="uploadIcon">UPLOAD</fa-icon> -->
@@ -344,10 +336,7 @@
         </div>      
         </ng-template>
   
-        <!--create popup-->
-    
-        <!-- <app-single-upload [IsUpload]="isSingleUpload" (EmployeeData)="OnLoadEmployeeData($event)" ></app-single-upload>
-        <app-bulk-upload></app-bulk-upload> -->
+       
   </div>
   
   
