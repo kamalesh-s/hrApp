@@ -1,9 +1,18 @@
 
 
+
+<div class="contentWrapper dataTableContentWrapper">
+  <div class="contentContainer">
+      <div class="appContainer"></div>
+      <div class="leftContent">
+        <app-side-nav-bar></app-side-nav-bar>
+        </div>
+        <div class="rightContent">
+
 <app-ltv-upload-dropdown></app-ltv-upload-dropdown>
 
 <div class="table">
-  <table id="paragraphTable" class="display" style="width:100%">
+  <div id="paragraphTable" class="display" style="width:100%">
  <div class="table_top_content">
 
   <!--Filter-->
@@ -17,7 +26,7 @@
   
   <!--Data Table-->
     <!-- <div class="mat-elevation-z8"> -->
-  <table  mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter"  matSort class="mat-elevation-z8">
+  <table  mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter"  matSort class="mat-elevation-z8 tableDataContent">
   
       <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
@@ -71,4 +80,5 @@
   <mat-paginator #paginator [pageSizeOptions]="[2, 4, 6]" showFirstLastButtons></mat-paginator>
   
 <!-- </div> -->
-
+</div>
+</div> 

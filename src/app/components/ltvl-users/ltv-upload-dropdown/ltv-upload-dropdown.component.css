@@ -335,3 +335,13 @@ h2.CustomTitle{
   margin-bottom: 10px;
   color: #043F6F;
 }
+
+@media (max-width: 575.98px){
+.ExportBtn {
+    font-size: 10px !important;
+    border-radius: 6px !important;
+    padding: 11px;
+    width: fit-content;
+    height: fit-content;
+}
+}

@@ -2537,6 +2537,40 @@ button.editBtn , .deleteBtn{
     .dataTableContentWrapper, .rightContent{
         padding: 20px 10px;
     }
+    .mat-sort-header-arrow{
+        margin: 0px !important;
+    }
+    button.editBtn[_ngcontent-gka-c153], .deleteBtn[_ngcontent-gka-c153]{
+        font-size: 10px !important;
+    }
+    .topContent_btn {
+        display: flex;
+        justify-content: space-between;
+        // flex-direction: column;
+    }
+    .topContent_btn button:first-child {
+        margin-right: 0px;
+        margin-bottom: 6px;
+    }
+    .ExportBtn{
+        font-size: 10px !important;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 8px !important;
+        border-top: none !important;
+        width: fit-content;
+        /* font-size: 10px !important; */
+    }
+    .topContent .mat-select-placeholder{
+        font-size: 10px !important;
+    }
+    .topContent {
+        display: flex;
+        flex-direction: column;
+    }
+    .mainTitle{
+        padding-bottom: 0px;
+    }
 }
 
 
@@ -2559,6 +2593,43 @@ button.editBtn , .deleteBtn{
     }
     th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
         padding-left: 6px !important;
+    }
+    // th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type{
+    //     padding-right: 8px !important;
+    // }
+    .mat-sort-header-arrow{
+        margin: 0px !important;
+    }
+    button.editBtn[_ngcontent-gka-c153], .deleteBtn[_ngcontent-gka-c153]{
+        font-size: 10px !important;
+    }
+    .topContent_btn {
+        display: flex;
+        justify-content: space-between;
+        // flex-direction: column;
+    }
+    .topContent_btn button:first-child {
+        margin-right: 0px;
+        margin-bottom: 6px;
+    }
+    .ExportBtn{
+        font-size: 10px !important;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 8px !important;
+        border-top: none !important;
+        width: fit-content;
+        /* font-size: 10px !important; */
+    }
+    .topContent .mat-select-placeholder{
+        font-size: 10px !important;
+    }
+    .topContent {
+        display: flex;
+        flex-direction: column;
+    }
+    .mainTitle{
+        padding-bottom: 0px;
     }
     /* .logo img {
         width: 85%;
@@ -2841,7 +2912,7 @@ button.editBtn , .deleteBtn{
     .dataTableContentWrapper,
     .rightContent {
         width: 100%;
-        padding: 20px 10px;
+        padding: 20px 3px;
     }
     .footer h3 {
         font-size: 10px;
@@ -2858,5 +2929,12 @@ button.editBtn , .deleteBtn{
         font-size: 14px;
         border: none;
         outline: none;
+    }
+    .material-icons {
+        font-size: 13px !important;
+    }
+    .mat-icon {
+        height: 12px !important;
+        width: 14px !important;
     }
 }

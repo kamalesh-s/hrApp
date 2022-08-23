@@ -38,14 +38,14 @@
         <div class="logo">
             <img [src]="tablogoimage" alt="">
         </div>
-   
-         <!-- <div id="mySidenav"  #mySidenav class="mysidenav">
-            <a href="javascript:void(0)" class="closebtn" (click)=""><mat-icon>close</mat-icon></a>
+        
+         <div id="mySidenav"  #mySidenav class="mysidenav" [class.toggled]="classToggled">
+            <a class="closebtn" (click)="toggleField()"><mat-icon>close</mat-icon></a>
             <div class="logo">
-                <img src="assests/img/logoFinal.png">
+                <img [src]="tablogoimage" alt="">
             </div>
             <div class="profileImg">
-                <img src="assests/img/profile-pic-2.jpg">
+                <img [src]="profileimage" alt="">
             </div>
             <div class="profileContent">
                 <h2 class="navTitle ">Intellifer Systems</h2>
@@ -70,9 +70,9 @@
 
         </div> 
 
-        <div class="menuNav" (click)="sidebarShow = !sidebarShow">
+        <div class="menuNav" (click)="toggleField()">
             <mat-icon>menu</mat-icon>
-        </div> -->
+        </div>
 
         <!-- <mat-sidenav-container class="example-container" *ngIf="shouldRun">
             <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"

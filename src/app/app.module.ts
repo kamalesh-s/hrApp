@@ -48,6 +48,7 @@ import { DepartmentEditPopupComponent } from './components/department/department
 import { DepartmentDeletePopupComponent } from './components/department/department-delete-popup/department-delete-popup.component';
 import { DepartmentViewPopupComponent } from './components/department/department-view-popup/department-view-popup.component';
 import { SkillDeletePopupComponent } from './components/skill/skill-delete-popup/skill-delete-popup.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 
 
 
@@ -88,7 +89,8 @@ import { SkillDeletePopupComponent } from './components/skill/skill-delete-popup
     DepartmentEditPopupComponent,
     DepartmentDeletePopupComponent,
     DepartmentViewPopupComponent,
-    SkillDeletePopupComponent
+    SkillDeletePopupComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { LtvlUsersComponent } from './components/ltvl-users/ltvl-employee.compon
  import { SkillMasterComponent } from './components/skill/skill.component';
  import { TrainingRecommendationComponent } from './components/training-recommendation/training-recommendation.component';
 import { SkillMappingComponent } from './components/skill-mapping/skill-mapping.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'ltvlUsers', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
    { path: 'productGroup&Line', component: ProductGroupComponent },
    { path: 'skillMapping', component: SkillMappingComponent },
    { path: 'trainingRecommendation', component: TrainingRecommendationComponent },
+   { path: 'signIn', component: SignInComponent }
 ];
 
 @NgModule({

@@ -36,10 +36,11 @@ export class SideNavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  mySidenavopen(){
-    
+  classToggled = false;
+
+  public toggleField() {
+    this.classToggled = !this.classToggled;  
   }
 
-  shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
 
 }

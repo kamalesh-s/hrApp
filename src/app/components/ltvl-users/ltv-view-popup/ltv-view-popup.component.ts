@@ -18,6 +18,7 @@ export class LtvViewPopupComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   test(){
   console.log(this.data);
 }

@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { LtvlEmployeeService } from 'src/app/services/ltvlEmployeeservice.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {ShareDataService} from 'src/app/share-data.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class LtvEditPopupComponent implements OnInit {
  // editPostModal: any;
 
   constructor(private service :LtvlEmployeeService ,
-     private formBuilder: FormBuilder ,
+     private formBuilder: FormBuilder , private shareData : ShareDataService ,
      @Inject(MAT_DIALOG_DATA) public editData:any
      ) { }
 
@@ -109,7 +110,7 @@ export class LtvEditPopupComponent implements OnInit {
         this.updateFormValue.reset();
       }
     })
-    this.getAllLtvlEmployeeData();
+    this.shareData.getAllLtvlEmployeeData();
 
   }
 
