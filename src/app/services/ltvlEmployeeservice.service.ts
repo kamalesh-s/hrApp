@@ -23,7 +23,7 @@ export class LtvlEmployeeService {
   //private baseUrl ='https://retoolapi.dev/dTHPxB/data';
   private baseUrl ='http://intellifer-001-site1.btempurl.com/api/HR/';
   
-  editData: any;
+ // editData: any;
   
   constructor(private http: HttpClient) { }
 
@@ -76,15 +76,15 @@ export class LtvlEmployeeService {
         }
 
         addLtvlEmployee(data: any) {
-             return this.http.post(this.baseUrl+'AddLtvlEmployee',data)
+             return this.http.post<any>(this.baseUrl+'AddLtvlEmployee',data)
         }
 
         updateLtvlEmployee(data:any , psNumber: number){
           return this.http.put<any>(this.baseUrl+'UpdateLtvlEmployee/'+data.psNumber ,data)
         }
 
-        deleteLtvlEmployee(data:any ) {
-            return this.http.delete<any>(this.baseUrl+'DeleteLtvlEmployee/'+data.psNumber)
+        deleteLtvlEmployee(data:any, psNumber: number ) {
+            return this.http.delete<any>(this.baseUrl+'DeleteLtvlEmployee/'+data.psNumber ,data)
         }
 
   // updateData(data?: any, id?: number) {

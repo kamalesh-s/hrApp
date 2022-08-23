@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
@@ -10,17 +11,16 @@ export class LtvViewPopupComponent implements OnInit {
 
   profileimage:string ="assets/img/profile-pic-2.jpg";
   
-  constructor() {
-    // public dialogRef: MatDialogRef<SampleDialogComponent>,
-
-    // @Inject(MAT_DIALOG_DATA) public data: any,
-    // { }
+  constructor( @Inject(MAT_DIALOG_DATA) public data: any,
+  ) {
+    
    }
 
   ngOnInit(): void {
   }
-
-
+  test(){
+  console.log(this.data);
+}
  
 
 }

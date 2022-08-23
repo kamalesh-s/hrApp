@@ -9,8 +9,10 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
   templateUrl: './ltv-edit-popup.component.html',
   styleUrls: ['./ltv-edit-popup.component.css']
 })
+
 export class LtvEditPopupComponent implements OnInit {
   updateFormValue: any;
+  getAllLtvlEmployeeData: any;
  // editPostModal: any;
 
   constructor(private service :LtvlEmployeeService ,
@@ -98,6 +100,7 @@ export class LtvEditPopupComponent implements OnInit {
   //     });
   // }
 
+
   updateLtvlEmployeeData(){
     this.service.updateLtvlEmployee(this.updateFormValue.value,this.editData.id)
     .subscribe({
@@ -106,6 +109,8 @@ export class LtvEditPopupComponent implements OnInit {
         this.updateFormValue.reset();
       }
     })
+    this.getAllLtvlEmployeeData();
+
   }
 
 }

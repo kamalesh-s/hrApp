@@ -33,7 +33,6 @@ export class LtvlUsersComponent implements OnInit {
  
   // LtvlEmployeeData :ltvlEmployee = new ltvlEmployee();
 
-  
   displayedColumns: string[] = ['name', 'psNumber', 'emailAddress', 'departmentName', 'Details','actions' ];
    dataSource !: MatTableDataSource<ltvlEmployee>;
 
@@ -69,6 +68,7 @@ export class LtvlUsersComponent implements OnInit {
 //     this.dialog.open(BulkUploadComponent);
 //   }
 
+
   //Edit Upload popup
   openEditDialog(row :any) {
     this.dialog.open(LtvEditPopupComponent,{
@@ -78,11 +78,12 @@ export class LtvlUsersComponent implements OnInit {
  
   
  //Delete Popup
-  openDeleteDialog(row : any) {
-   this.dialog.open(LtvDeletePopupComponent),{
+  openDeleteDialog(row :any) {
+   this.dialog.open(LtvDeletePopupComponent,{
     data:row
-   };
+   });
  }
+
 
 //  //View Detail
 //  viewDetail(row : posts){
@@ -232,10 +233,9 @@ applyFilter(event: Event) {
   // });
 }
 
-viewDetail(row : ltvlEmployee){
+viewDetail(row :any){
     //this.dialog.open(LtvViewPopupComponent);
-
-    const dialog = this.dialog.open(LtvViewPopupComponent, {
+      this.dialog.open(LtvViewPopupComponent, {
       // Can be closed only by clicking the close button
       disableClose: true,
       data: row

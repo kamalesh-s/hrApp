@@ -2557,6 +2557,9 @@ button.editBtn , .deleteBtn{
     .tabNav {
         display: block;
     }
+    th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
+        padding-left: 6px !important;
+    }
     /* .logo img {
         width: 85%;
         margin-bottom: 8px;
@@ -2799,18 +2802,18 @@ button.editBtn , .deleteBtn{
         border-bottom: 1px solid #d6d6d6;
     }
     .table {
-        padding: 5px;
+        padding: 2px;
         width: 100%;
     }
     .table th {
-        font-size: 14px;
+        font-size: 10px;
         color: #181818;
         text-align: left;
         padding: 4px;
     }
     .table tr td {
         padding: 4px;
-        font-size: 11px;
+        font-size: 8px;
     }
     .topContent .mainTitle {
         color: white;

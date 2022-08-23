@@ -27,6 +27,10 @@ export class SideNavBarComponent implements OnInit {
 
   public sidebarShow: boolean = false;
 
+  // events: string[] = [];
+  // opened: boolean;
+
+
   constructor() { }
 
   ngOnInit(): void {
@@ -35,5 +39,7 @@ export class SideNavBarComponent implements OnInit {
   mySidenavopen(){
     
   }
+
+  shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
 
 }

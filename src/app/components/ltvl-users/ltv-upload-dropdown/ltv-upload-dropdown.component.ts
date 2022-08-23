@@ -96,7 +96,7 @@ export class LtvUploadDropdownComponent implements OnInit {
   });
   
   
-//   this.getAllLtvlEmployeeData();
+   this.getAllLtvlEmployeeData();
   }
  
 
