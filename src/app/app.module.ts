@@ -10,7 +10,7 @@ import { SideNavBarComponent } from './components/side-nav-bar/side-nav-bar.comp
  import { DepartmentMasterComponent } from './components/department/department.component';
  import { SkillMasterComponent } from './components/skill/skill.component';
 import { RouterModule } from '@angular/router';
-  import { ProductGroupComponent } from './components/product-group-&-line/product-group-&-line.component';
+  import { ProductGroupComponent } from './components/product-group-line/product-group-&-line.component';
 // import { TrainingRecommendationComponent } from './training-recommendation/training-recommendation.component';
 import {MatSortModule} from '@angular/material/sort';
 import { HttpClientModule } from "@angular/common/http";

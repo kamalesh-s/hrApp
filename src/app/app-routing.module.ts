@@ -4,7 +4,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
  import { DepartmentMasterComponent } from './components/department/department.component';
 import { LtvlUsersComponent } from './components/ltvl-users/ltvl-employee.component';
  import { NapsComponent } from './components/naps/naps.component';
- import { ProductGroupComponent } from './components/product-group-&-line/product-group-&-line.component';
+ import { ProductGroupComponent } from './components/product-group-line/product-group-&-line.component';
  import { SkillMasterComponent } from './components/skill/skill.component';
  import { TrainingRecommendationComponent } from './components/training-recommendation/training-recommendation.component';
 import { SkillMappingComponent } from './components/skill-mapping/skill-mapping.component';
