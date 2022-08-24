@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
+  signInlogo:string='assets/img/image-removebg-preview (12).png';
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }

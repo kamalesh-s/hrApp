@@ -14,11 +14,23 @@ export class SkillService {
 
   constructor(private http: HttpClient) { }
 
-  getEmployeeSkill(): Observable<Skill[]> {
+  getAllSkill(): Observable<Skill[]> {
     return this.http.get(this.baseUrl+'GetAllSkills').pipe(
        map((response: any) => {
          return response;
       })
      );
+}
+
+addSkill(data: any) {
+  return this.http.post<any>(this.baseUrl+'AddSkill',data)
+}
+
+updateSkill(data:any , psNumber: number){
+return this.http.put<any>(this.baseUrl+'UpdateSkill/'+data.psNumber ,data)
+}
+
+deleteSkill(data:any, psNumber: number ) {
+ return this.http.delete<any>(this.baseUrl+'DeleteSkill/'+data.psNumber ,data)
 }
 }

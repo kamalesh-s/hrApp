@@ -1,4 +1,10 @@
 
+
+<div class="topContent">
+  <h2 class="title CustomTitle mainTitle">Skill</h2>
+  <div class="topContent_btn">
+    <button class="btn btn-secondary drop-Btn ExportBtn ">Download Template</button>
+  
 <!--upload dropdown field-->
 <mat-form-field class="dropDownBtn" appearance='outline'>
   <mat-select name="countryReactiveVaraible"  placeholder="+ Add Skill">
@@ -12,40 +18,35 @@
   <div class="popUpContainer">
     <h2 class="navTitle CustomTitle">Create Skill</h2>
     <div class="formContainer">
-      <!-- <form #f = "ngForm" name="form" (submit)="onSubmit(f)"> -->
+     
       <div class="singleUploadForm">
        
         <div class="formLeftContent" >
           <mat-form-field appearance="fill">
             <mat-label>Skill ID</mat-label>
-             <input   name="employee_name" matInput>
+             <input name="id" formControlName="id" matInput>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label >Skill Name</mat-label>
-            <!-- <input  [(ngModel)]="EmpData.ps_number" name="ps_number" matInput > -->
-            <input  name="ps_number" matInput >
+            <input name="name" formControlName="name" matInput >
           </mat-form-field>
-         
-       
         </div>
         <div class="formRightContent">
-
           <mat-form-field appearance="fill">
             <mat-label>Skill Definition</mat-label>
-            <input  name="email" matInput >
+            <input name="definition" formControlName="definition" matInput >
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Skill Criticality</mat-label>
-            <input   name="mobile" matInput >
+            <input name="criticalityLevel" formControlName="criticalityLevel" matInput >
           </mat-form-field>
-        
         </div>
      
       </div>
     </div>
     <mat-dialog-actions align="end">
       <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button  color="primary" (click)="addLtvlEmployeeData()" cdkFocusInitial>Save</button>
+      <button mat-button  color="primary" (click)="addSkill()" cdkFocusInitial>Save</button>
     </mat-dialog-actions>
      </div> 
 
@@ -78,5 +79,8 @@
 </ng-template>
 
 <div>
+
+</div>
+</div>
 
   

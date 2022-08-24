@@ -21,7 +21,6 @@ export interface ltvlEmployee {
     "createdOrUpdatedBy": "string",
     "plantLocation": "string"
 
-    
     //  psNumber: number;
     // name :	string;
     // nullable: true;

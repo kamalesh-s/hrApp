@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {ShareDataService} from 'src/app/share-data.service';
 
-
 @Component({
   selector: 'app-ltv-edit-popup',
   templateUrl: './ltv-edit-popup.component.html',
@@ -48,6 +47,7 @@ export class LtvEditPopupComponent implements OnInit {
       this.updateFormValue.controls['plantLocation'].setValue(this.editData.plantLocation);
       this.updateFormValue.controls['departmentName'].setValue(this.editData.departmentName);
     }
+   
   }
 
   departments= [
@@ -109,9 +109,8 @@ export class LtvEditPopupComponent implements OnInit {
         alert("added");
         this.updateFormValue.reset();
       }
+      
     })
-    this.shareData.getAllLtvlEmployeeData();
-
   }
 
 }

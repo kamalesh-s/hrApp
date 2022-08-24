@@ -12,8 +12,9 @@ import {ShareDataService} from 'src/app/share-data.service';
 import { Skill } from 'src/app/interface/skill';
 import {MatTableModule} from '@angular/material/table';
 import { DeleteModalComponent } from '../delete-modal/delete-modal.component';
+import { SkillEditPopupComponent } from './skill-edit-popup/skill-edit-popup.component';
 //import { EditModalComponent } from '../edit-modal/edit-modal.component';
-import {EditModalComponent} from 'src/app/components/skill/edit-modal/edit-modal.component'
+
 
 @Component({
   selector: 'app-skill-master',
@@ -36,7 +37,7 @@ export class SkillMasterComponent implements OnInit {
 
   //GET EMPLOYEE DATA
 getAllLtvlEmployeeData() {
-  this.service.getEmployeeSkill().subscribe((res:any) => {
+  this.service.getAllSkill().subscribe((res:any) => {
      this.posts = res;
     console.log(this.posts)
     this.dataSource = new MatTableDataSource(this.posts);
@@ -46,7 +47,7 @@ getAllLtvlEmployeeData() {
 
 
 editSkillPopup(){
-  this.dialog.open(EditModalComponent);
+  this.dialog.open(SkillEditPopupComponent);
 }
 deleteSkillPopup(){
   this.dialog.open(DeleteModalComponent);

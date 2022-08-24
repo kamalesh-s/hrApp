@@ -17,8 +17,13 @@ fa-icon.ng-fa-icon {
     border: 1px solid #555;
   }
   .toggled{
-    width: 43%;
+    width: 40%;
   }
 
+  @media (max-width: 575.98px){
+    .toggled{
+      width: 65%;
+    }
+  }
 
   

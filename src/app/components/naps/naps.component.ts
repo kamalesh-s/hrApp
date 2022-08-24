@@ -10,6 +10,8 @@ import { NapsService } from 'src/app/services/naps.service';
 //import { faPenToSquare , faTrash ,faTrashCan} from '@fortawesome/free-solid-svg-icons';
 import {Subscription} from 'rxjs';
 import {ShareDataService} from 'src/app/share-data.service';
+import { NapsEditPopupComponent } from './naps-edit-popup/naps-edit-popup.component';
+import { NapsDeletePopupComponent } from './naps-delete-popup/naps-delete-popup.component';
 
 @Component({
   selector: 'app-naps',
@@ -44,13 +46,17 @@ export class NapsComponent implements OnInit {
   
 
   //Edit Upload popup
-  openEditDialog(templateRef: TemplateRef<any>) {
-    this.dialog.open(templateRef);
-  }
+   openEditDialog(row :any) {
+    this.dialog.open(NapsEditPopupComponent,{
+      data:row
+    });
+   }
  
  //Delete Popup
-  openDeleteDialog(templateRef: TemplateRef<any>) {
-   this.dialog.open(templateRef);
+  openDeleteDialog(row :any) {
+   this.dialog.open(NapsDeletePopupComponent,{
+    data:row
+   });
  }
 
  //View Detail
@@ -107,32 +113,39 @@ getAllNapsEmployeeData() {
 
 
 //ADD DATA
-addLtvlEmployee(){
-const { value } = this.formValue;
-console.log(value);
-
-let addLtvlEmployeeDataObj = {
-  psNumber: value.psNumber,
-  name: value.name,
-  departmentName: value.departmentName,
-  immediateSupervisorEmployeeName: value.immediateSupervisorEmployeeName,
-  emailAddress :value.emailAddress,
-  mobilePhoneNumber :value.mobilePhoneNumber,
-  plantLocation:value.plantLocation,
-};
-console.log(addLtvlEmployeeDataObj);
-
-this.service.addLtvlEmployee(addLtvlEmployeeDataObj).subscribe((res) => {
-  console.log(res);
-  addLtvlEmployeeDataObj = res.id;
-  this.posts.push(addLtvlEmployeeDataObj);
-  console.log(res);
-  this.formValue.reset();
-});
-
-
-this.getAllNapsEmployeeData();
-}
+addContractEmployee(){
+  const { value } = this.formValue;
+  console.log(value);
+  
+  let addContractEmployeeDataObj = {
+    name: value.name,
+    departmentClassification: value.departmentClassification,
+    contractName: value.contractName,
+    gender :value.gender,
+    type :value.type,
+    certificates:value.certificates,
+    dateOfJoining:value.dateOfJoining,
+    productGroup:value.productGroup,
+    plantLocation:value.plantLocation,
+    primarySkill:value.primarySkill,
+    additionalSkills:value.additionalSkills,
+    departmentName:value.departmentName,
+    productLine:value.certificates,
+  };
+  console.log(addContractEmployeeDataObj);
+  
+  this.service.addContractEmployee(addContractEmployeeDataObj).subscribe((res) => {
+    console.log(res);
+    //addLtvlEmployeeDataObj = res.id;
+    this.posts.push(addContractEmployeeDataObj);
+    console.log(res);
+    this.formValue.reset();
+  });
+  
+  
+   //this.getAllLtvlEmployeeData();
+  }
+ 
 
 
 editModal(editPost: any) {

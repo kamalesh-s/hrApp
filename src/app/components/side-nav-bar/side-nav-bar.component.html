@@ -42,7 +42,7 @@
          <div id="mySidenav"  #mySidenav class="mysidenav" [class.toggled]="classToggled">
             <a class="closebtn" (click)="toggleField()"><mat-icon>close</mat-icon></a>
             <div class="logo">
-                <img [src]="tablogoimage" alt="">
+                <img [src]="logoimage" alt="">
             </div>
             <div class="profileImg">
                 <img [src]="profileimage" alt="">
@@ -54,22 +54,21 @@
 
 
             <div class="pagesNav">
-
                 <div class="sidenavDropdown">
-
-                    <a href="dashboard.html" class="navHeading"><i class="fa-solid fa-gauge"></i>Dashboard</a>
-                    <a href="ltvlMaster.html" class="navHeading"><i class="fa-solid fa-users"></i>LTVL Users</a>
-                    <a href="naps.html" class="navHeading"><i class="fa-solid fa-users-gear"></i>NAPS Users</a>
-                    <a href="departmentMaster.html" class="navHeading"><i class="fa-solid fa-landmark"></i>Department Master</a>
-                    <a href="skillMaster.html" class="navHeading"><i class="fa-solid fa-user-graduate"></i>Skill Master</a>
-                    <a href="locationSupervisor.html" class="navHeading"><i class="fa-solid fa-industry"></i>Product Group & Line</a>
-                    <a href="trainingCreation.html" class="navHeading"><i class="fa-solid fa-chalkboard-user"></i>Training Recommendation</a>
-
+                    <a class="navHeading" routerLinkActive="active" routerLink="/dashboard"><mat-icon>dashboard</mat-icon> Dashboard</a>
+                    <a class="navHeading" routerLinkActive="active" routerLink="/ltvEmployee"><mat-icon>supervisor_account</mat-icon>LTV Employee</a>
+                    <a class="navHeading" routerLinkActive="active" routerLink="/naps"><mat-icon>account_circle</mat-icon>NAPS Employee</a>
+                    <a class="navHeading" routerLinkActive="active" routerLink="/department"><mat-icon>account_balance</mat-icon>Department</a> 
+                     <a class="navHeading" routerLinkActive="active" routerLink="/skill"><mat-icon>local_library</mat-icon>Skill</a> 
+                    <a class="navHeading" routerLinkActive="active" routerLink="/productGroup&Line"><mat-icon>place</mat-icon>Product Group & Line</a>
+                    <a class="navHeading" routerLinkActive="active" routerLink="/skillMapping"><mat-icon>library_books</mat-icon>Skill Mapping</a>
+                    <a class="navHeading" routerLinkActive="active" routerLink="/trainingRecommendation"><mat-icon>training</mat-icon>Training Recommendation</a> 
                 </div>
             </div>
 
         </div> 
 
+        
         <div class="menuNav" (click)="toggleField()">
             <mat-icon>menu</mat-icon>
         </div>

@@ -1,146 +1,17 @@
-<div class="topContent">
-  <h2 class="title CustomTitle mainTitle">NAPS Employee</h2>
-  <div class="topContent_btn">
-    <button class="btn btn-secondary drop-Btn ExportBtn ">Download Template</button>
 
 
-    <!--upload dropdown field-->
-    <mat-form-field class="dropDownBtn" appearance='outline'>
-      <mat-select name="countryReactiveVaraible" placeholder="+ Upload Users">
-        <mat-option (click)="napsSingleUploadDialog(napsSingleUploadPopup)">Single Upload</mat-option>
-        <mat-option (click)="napsBulkUploadDialog(napsBulkUploadPopup)"> Bulk Upload</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-
-    <!--Single upload-->
-    <ng-template #napsSingleUploadPopup>
-      <div class="popUpContainer">
-        <h2 class="navTitle CustomTitle">Create Employee</h2>
-        <div class="formContainer">
-          <div class="formContentWrapper">
-
-            <div class="formLeftContent">
-              <mat-form-field appearance="fill">
-                <mat-label>Employee Name</mat-label>
-                <input matInput>
-              </mat-form-field>
-
-              <!-- <mat-form-field [formGroup]="updateFormValue" appearance="fill"> -->
-              <mat-form-field appearance="fill">
-                <mat-label>PS Number</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>Email</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>Mobile</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>DepartmentClassification</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>ContractName</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>Gender</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>Type of Contract</mat-label>
-                <input matInput>
-              </mat-form-field>
-            </div>
-
-
-            <div class="formRightContent">
-
-              <mat-form-field appearance="fill">
-                <mat-label>productGroup</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>Plant Location</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>PrimarySkill</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>AdditionalSkills</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>ProductGroup</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>Certificates</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>DateOfJoining</mat-label>
-                <input matInput>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-select placeholder="Department Name">
-                  <mat-option *ngFor="let departmentName of departments" [value]="departmentName.value">
-                    {{departmentName.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-
-
-          </div>
+<div class="contentWrapper dataTableContentWrapper">
+  <div class="contentContainer">
+      <div class="appContainer"></div>
+      <div class="leftContent">
+        <app-side-nav-bar></app-side-nav-bar>
         </div>
-        <mat-dialog-actions align="end">
-          <button mat-button mat-dialog-close>Cancel</button>
-          <button mat-button color="primary" (click)="addLtvlEmployee()" cdkFocusInitial>Save</button>
-        </mat-dialog-actions>
-      </div>
+        <div class="rightContent">
 
-    </ng-template>
-
-
-    <!--Bulk Upload-->
-    <ng-template #napsBulkUploadPopup>
-
-      <div class="popUpContainer">
-        <h2 class="navTitle CustomTitle">Attach Your Documents</h2>
-        <div class="popupContentWrapper">
-          <div class="popupContentContainer">
-            <div class="dragContainer">
-              <div class="dragContent">
-                <!-- <fa-icon [icon] ="faCloudArrowUp" class="uploadIcon">UPLOAD</fa-icon> -->
-                <h3>Drag and drop here<br>or</h3>
-                <button class="browseFilesBtn">Browse files</button>
-                <!-- <h3 class="dropFileBtn">Browse Files</h3> -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <mat-dialog-actions align="end">
-          <button mat-button mat-dialog-close>Cancel</button>
-          <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
-          <button mat-button color="primary">Upload</button>
-        </mat-dialog-actions>
-      </div>
-
-    </ng-template>
-
-  </div>
-</div>
-
+   <app-naps-upload-dropdown></app-naps-upload-dropdown>
 
 <div class="table">
-  <table id="paragraphTable" class="display" style="width:100%">
+  <div id="paragraphTable" class="display" style="width:100%">
 
     <div class="table_top_content">
 
@@ -184,12 +55,12 @@
 
         <ng-container matColumnDef="actions">
           <th mat-header-cell *matHeaderCellDef> Actions </th>
-          <td mat-cell *matCellDef="let element">
-            <button class="icon-space editBtn" (click)="openEditDialog(ltvlEmployeeEditPopup)">
+          <td mat-cell *matCellDef="let row">
+            <button class="icon-space editBtn" (click)="openEditDialog(row)">
               <!-- <fa-icon [icon] ="faPenToSquare">edit</fa-icon> -->
               <mat-icon>edit</mat-icon>
             </button>
-            <button class="icon-space deleteBtn" (click)="openDeleteDialog(ltvlEmployeeDeletePopup)">
+            <button class="icon-space deleteBtn" (click)="openDeleteDialog(row)">
               <!-- <fa-icon [icon] ="faTrash">Delete</fa-icon> -->
               <mat-icon>delete</mat-icon>
             </button>
@@ -203,128 +74,9 @@
       <mat-paginator #paginator [pageSizeOptions]="[2, 4, 6]" showFirstLastButtons></mat-paginator>
 
 
-      <!--Employee Detail Edit popup-->
-      <ng-template #ltvlEmployeeEditPopup>
-
-        <!-- <div class="" *ngIf="editPostModal"> -->
-        <div class="popUpContainer">
-          <h2 class="navTitle CustomTitle">Edit Employee</h2>
-          <div class="formContainer ">
-
-            <div class="formContentWrapper">
-
-              <div class="formLeftContent">
-                <mat-form-field appearance="fill">
-                  <mat-label>Employee Name</mat-label>
-                  <input matInput>
-                </mat-form-field>
-
-                <!-- <mat-form-field [formGroup]="updateFormValue" appearance="fill"> -->
-                <mat-form-field appearance="fill">
-                  <mat-label>PS Number</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>Email</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>Mobile</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>DepartmentClassification</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>ContractName</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>Gender</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>Type of Contract</mat-label>
-                  <input matInput>
-                </mat-form-field>
-              </div>
+     
 
 
-              <div class="formRightContent">
-                <mat-form-field appearance="fill">
-                  <mat-label>productGroup</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>Plant Location</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>PrimarySkill</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>AdditionalSkills</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>ProductGroup</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>Certificates</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-label>DateOfJoining</mat-label>
-                  <input matInput>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                  <mat-select placeholder="Department Name">
-                    <mat-option *ngFor="let departmentName of departments" [value]="departmentName.value">
-                      {{departmentName.viewValue}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-
-
-            </div>
-
-
-          </div>
-
-          <mat-dialog-actions align="end">
-            <button mat-button mat-dialog-close>Cancel</button>
-
-            <button mat-button [mat-dialog-close]="true" color="primary" (click)="updatePost()"
-              cdkFocusInitial>Save</button>
-          </mat-dialog-actions>
-        </div>
-
-      </ng-template>
-
-
-      <!--Employee Detail Delete Popup-->
-      <ng-template #ltvlEmployeeDeletePopup>
-        <div class="popUpContainer">
-          <h2 class="navTitle CustomTitle">Delete Employee Detail</h2>
-          <div class="deletePopupContentWrapper">
-            <div class="popupContentContainer">
-              <!-- <fa-icon [icon] ="faTrashCan" class="deleteIcon"></fa-icon> -->
-              <h2>Are you sure?</h2>
-              <p>Deleting a row will permanently remove it from your library</p>
-            </div>
-            <div class="userprofileImage">
-            </div>
-          </div>
-          <mat-dialog-actions align="end">
-            <button mat-button mat-dialog-close>Cancel</button>
-            <button mat-button [mat-dialog-close]="true" color="primary" cdkFocusInitial>Delete</button>
-          </mat-dialog-actions>
-        </div>
-      </ng-template>
 
       <!--View Employee Detail Popup-->
       <ng-template #ltvlEmployeeViewPopup>
@@ -426,3 +178,8 @@
       </ng-template>
 
     </div>
+
+
+  
+  </div>
+  </div>

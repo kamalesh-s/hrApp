@@ -330,12 +330,24 @@ h2.CustomTitle{
   color: #043F6F;
   
 }
+@media (min-width: 575.98px) and (max-width: 768px){
+.ExportBtn {
+    font-size: 10px !important;
+    border-radius: 6px !important;
+    padding: 14px !important;
+    width: fit-content;
+    height: fit-content;
+}
+.mat-form-field-appearance-standard .mat-form-field-flex{
+    padding-top: 0px !important;
+}
+}
 
 @media (max-width: 575.98px){
     .ExportBtn {
         font-size: 10px !important;
         border-radius: 6px !important;
-        padding: 11px;
+        padding: 14px !important;
         width: fit-content;
         height: fit-content;
     }
@@ -343,5 +355,8 @@ h2.CustomTitle{
         font-size: 8px;
         border-radius: 2px;
         padding: 2px !important;
+    }
+    .mat-form-field-appearance-standard .mat-form-field-flex{
+        padding-top: 0px !important;
     }
     }

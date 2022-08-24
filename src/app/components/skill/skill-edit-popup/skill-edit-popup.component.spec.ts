@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditModalComponent } from './edit-modal.component';
+import { SkillEditPopupComponent } from './skill-edit-popup.component';
 
-describe('EditModalComponent', () => {
-  let component: EditModalComponent;
-  let fixture: ComponentFixture<EditModalComponent>;
+describe('SkillEditPopupComponent', () => {
+  let component: SkillEditPopupComponent;
+  let fixture: ComponentFixture<SkillEditPopupComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditModalComponent ]
+      declarations: [ SkillEditPopupComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(EditModalComponent);
+    fixture = TestBed.createComponent(SkillEditPopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,12 +1,12 @@
 import { Component, Inject, OnInit ,TemplateRef } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MatDialogModule } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {  ltvlEmployee } from 'src/app/interface/ltvlEmployee/ltvl-employee-interface';
-import { LtvlEmployeeService } from 'src/app/services/ltvlEmployeeservice.service';
+import { SkillService } from 'src/app/services/skill.service';
 import {ShareDataService} from 'src/app/share-data.service';
 //import { faCloudArrowUp } from '@fortawesome/free-solid-svg-icons';
 
@@ -27,10 +27,12 @@ export class skillUploadDropdownComponent implements OnInit {
   posts!: any;
   getAllData: any;
   ltvlEmployeeDataObj: any;
+  formValue!: FormGroup;
+  addEmployeeDataForm !: FormGroup;
   // faCloudArrowUp = faCloudArrowUp;
   
  
-  constructor(private formBuilder: FormBuilder , private sharedService:ShareDataService , public service :LtvlEmployeeService , public dialog: MatDialog) {
+  constructor(private formBuilder: FormBuilder , private sharedService:ShareDataService , public service :SkillService , public dialog: MatDialog) {
     
    }
    departments= [
@@ -42,25 +44,19 @@ export class skillUploadDropdownComponent implements OnInit {
   //service :LtvlEmployeeService = new LtvlEmployeeService(); 
   
   ngOnInit(): void {
-    // this.formValue = this.formBuilder.group({
-    //   id:[''],
-    //   email: [''],
-    //   employee_name:[''],
-    //   ps_number:[''],
-    //   department_name:[''],
-    //   mobile:[''],
-    //   plant_location:[''],
-    //   is:['']
-  //});
-  this.ltvlEmployeeDataObj=[];
-  }
+    this.formValue = this.formBuilder.group({
+      id: [''],
+      name: [''],
+      definition: [''],
+      criticalityLevel: [''],
+    });
 
-  // addLtvlEmployeeData(){
-  //   this.sharedService.sendClickEvent();
-  // }
-  
-  
-    addLtvlEmployeeData():void {
+    this.addEmployeeDataForm = this.formBuilder.group({
+      id :['',Validators.required],
+      name :['',Validators.required],
+      definition :['',Validators.required],
+      criticalityLevel :['',Validators.required],
+    })
     
     }
   
@@ -71,6 +67,28 @@ export class skillUploadDropdownComponent implements OnInit {
   
   BulkUploadDialog(templateRef: TemplateRef<any>){
     this.dialog.open(templateRef);
+  }
+
+  //ADD DATA
+ addSkill(){
+  const { value } = this.formValue;
+  console.log(value);
+  
+  let addSkillDataObj = {
+    id: value.id,
+    name: value.name,
+    definition: value.definition,
+    criticalityLevel: value.criticalityLevel,
+  };
+  console.log(addSkillDataObj);
+  
+  this.service.addSkill(addSkillDataObj).subscribe((res) => {
+    console.log(res);
+    //addLtvlEmployeeDataObj = res.id;
+    this.posts.push(addSkillDataObj);
+    console.log(res);
+    this.formValue.reset();
+  });
   }
 
   

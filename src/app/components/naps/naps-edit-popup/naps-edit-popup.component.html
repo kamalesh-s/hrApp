@@ -1,1 +1,82 @@
-<p>naps-edit-popup works!</p>
+
+
+ <!--Employee Detail Edit popup-->
+ <div class="popUpContainer">
+  <h2 class="navTitle CustomTitle">Edit Employee</h2>
+  
+  <div class="formContainer">
+     <!-- <form #f = "ngForm" name="form" (submit)="addLtvlEmployeeData(f)">  -->
+     
+    <div class="singleUploadForm">
+
+      <div class="formLeftContent" [formGroup]="updateFormValue">
+          <mat-form-field appearance="fill">
+            <mat-label>Employee Name</mat-label>
+            <input name="name" formControlName="name" matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>DepartmentClassification</mat-label>
+            <input name="departmentClassification" formControlName="departmentClassification" matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>ContractName</mat-label>
+            <input name="contractName" formControlName="contractName" matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Gender</mat-label>
+            <input name="gender" formControlName="gender" matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Type of Contract</mat-label>
+            <input name="type" formControlName="type" matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+              <mat-label>Certificates</mat-label>
+              <input name="certificates" formControlName="certificates" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>DateOfJoining</mat-label>
+              <input name="dateOfJoining" formControlName="dateOfJoining" matInput>
+            </mat-form-field>
+        </div>
+
+
+        <div class="formRightContent" [formGroup]="updateFormValue">
+          <mat-form-field appearance="fill">
+            <mat-label>productGroup</mat-label>
+            <input name="productGroup" formControlName="productGroup" matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Plant Location</mat-label>
+            <input name="plantLocation" formControlName="plantLocation" matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>PrimarySkill</mat-label>
+            <input name="primarySkill" formControlName="primarySkill" matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>AdditionalSkills</mat-label>
+            <input name="additionalSkills" formControlName="additionalSkills" matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+              <mat-label>productLine</mat-label>
+              <input name="productLine" formControlName="productLine" matInput>
+            </mat-form-field>
+         
+          <mat-form-field appearance="fill">
+            <mat-select placeholder="Department Name" name="departmentName" formControlName="departmentName">
+              <mat-option *ngFor="let departmentName of departments" [value]="departmentName.value">
+                {{departmentName.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+    </div>
+   
+  </div>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button  color="primary" (click)="updateContractEmployeeData()" cdkFocusInitial>Save</button>
+  </mat-dialog-actions>
+   </div> 
+

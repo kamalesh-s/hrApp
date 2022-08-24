@@ -49,6 +49,12 @@ import { DepartmentDeletePopupComponent } from './components/department/departme
 import { DepartmentViewPopupComponent } from './components/department/department-view-popup/department-view-popup.component';
 import { SkillDeletePopupComponent } from './components/skill/skill-delete-popup/skill-delete-popup.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { NapsUploadDropdownComponent } from './components/naps/naps-upload-dropdown/naps-upload-dropdown.component';
+import { DepartmentUploadDropdownComponent } from './components/department/department-upload-dropdown/department-upload-dropdown.component';
+import { SkillEditPopupComponent } from './components/skill/skill-edit-popup/skill-edit-popup.component';
+import { ProductGroupEditPopupComponent } from './components/product-group-line/product-group-edit-popup/product-group-edit-popup.component';
+import { ProductGroupDeletePopupComponent } from './components/product-group-line/product-group-delete-popup/product-group-delete-popup.component';
+import { ProductUploadDropdownComponent } from './components/product-group-line/product-upload-dropdown/product-upload-dropdown.component';
 
 
 
@@ -90,7 +96,13 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     DepartmentDeletePopupComponent,
     DepartmentViewPopupComponent,
     SkillDeletePopupComponent,
-    SignInComponent
+    SignInComponent,
+    NapsUploadDropdownComponent,
+    DepartmentUploadDropdownComponent,
+    SkillEditPopupComponent,
+    ProductGroupEditPopupComponent,
+    ProductGroupDeletePopupComponent,
+    ProductUploadDropdownComponent
   ],
   imports: [
     BrowserModule,

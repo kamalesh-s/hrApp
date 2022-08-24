@@ -31,13 +31,13 @@ export class NapsService {
   //  }
 
 
-  addLtvlEmployee(data: any) {
-    return this.http.post(this.baseUrl+'GetAllContractEmployees', JSON.stringify(data)).pipe(
-      map((response: any) => {
-        return response;
-      })
-    );
-  }
+  // addContractEmployee(data: any) {
+  //   return this.http.post(this.baseUrl+'AddContractEmployee', JSON.stringify(data)).pipe(
+  //     map((response: any) => {
+  //       return response;
+  //     })
+  //   );
+  // }
 
   // getLtvlEmployee() {
   //      return this.http.get('assets/data.json')
@@ -62,6 +62,19 @@ export class NapsService {
               );
         }
 
+        addContractEmployee(data: any) {
+          return this.http.post<any>(this.baseUrl+'AddContractEmployee',data)
+     }
+
+     updateContractEmployee(data:any , id: number){
+      return this.http.put<any>(this.baseUrl+'UpdateLtvlEmployee/'+data.id ,data)
+    }
+
+    deleteContractEmployee(data:any, id: number ) {
+      return this.http.delete<any>(this.baseUrl+'DeleteLtvlEmployee/'+data.id ,data)
+  }
+
+
   // updateData(data?: any, id?: number) {
   //   return this.http.patch(`${this.baseUrl}/${id}`, data).pipe(
   //     map((response: any) => {
@@ -70,21 +83,21 @@ export class NapsService {
   //   );
   // }
 
-  updateData(data?: any, id?: number) {
-    return this.http.patch(`${this.baseUrl+'UpdateLtvlEmployee'}/${id}`, data).pipe(
-      map((response: any) => {
-        return response.json;
-      })
-    );
-  }
+  // updateData(data?: any, id?: number) {
+  //   return this.http.patch(`${this.baseUrl+'UpdateLtvlEmployee'}/${id}`, data).pipe(
+  //     map((response: any) => {
+  //       return response.json;
+  //     })
+  //   );
+  // }
 
-  deleteData(id: number) {
-    return this.http.delete(`${this.baseUrl+'DeleteLtvlEmployee'}/${id}`).pipe(
-      map((response: any) => {
-        return response.json;
-      })
-    );
-  }
+  // deleteData(id: number) {
+  //   return this.http.delete(`${this.baseUrl+'DeleteLtvlEmployee'}/${id}`).pipe(
+  //     map((response: any) => {
+  //       return response.json;
+  //     })
+  //   );
+  // }
 
 
 }

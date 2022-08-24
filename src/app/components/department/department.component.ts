@@ -17,6 +17,8 @@ import {FormControl, Validators} from '@angular/forms';
 
 import {BehaviorSubject, fromEvent, merge, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+import { DepartmentEditPopupComponent } from './department-edit-popup/department-edit-popup.component';
+import { DepartmentDeletePopupComponent } from './department-delete-popup/department-delete-popup.component';
 
 @Component({
   selector: 'app-department-master',
@@ -51,14 +53,18 @@ export class DepartmentMasterComponent implements OnInit {
   
 
   //Edit Upload popup
-  openEditDialog(templateRef: TemplateRef<any>) {
-    this.dialog.open(templateRef);
+  openEditDialog(row :any) {
+    this.dialog.open(DepartmentEditPopupComponent,{
+      data:row
+    });
   }
  
  //Delete Popup
-  openDeleteDialog(templateRef: TemplateRef<any>) {
-   this.dialog.open(templateRef);
- }
+ openDeleteDialog(row :any) {
+  this.dialog.open(DepartmentDeletePopupComponent,{
+   data:row
+  });
+}
 
  //View Detail
  viewDetail(templateRef: TemplateRef<any>){
@@ -114,30 +120,26 @@ getAllDepartmentData() {
 
 
 //ADD DATA
-addLtvlEmployee(){
-const { value } = this.formValue;
-console.log(value);
-
-let addLtvlEmployeeDataObj = {
-  psNumber: value.psNumber,
-  name: value.name,
-  departmentName: value.departmentName,
-  immediateSupervisorEmployeeName: value.immediateSupervisorEmployeeName,
-  emailAddress :value.emailAddress,
-  mobilePhoneNumber :value.mobilePhoneNumber,
-  plantLocation:value.plantLocation,
-};
-console.log(addLtvlEmployeeDataObj);
-
-this.service.addLtvlEmployee(addLtvlEmployeeDataObj).subscribe((res) => {
-  console.log(res);
-  addLtvlEmployeeDataObj = res.id;
-  this.posts.push(addLtvlEmployeeDataObj);
-  console.log(res);
-  this.formValue.reset();
-});
-
-
+addDepartment(){
+  const { value } = this.formValue;
+  console.log(value);
+  
+  let addDepartmentDataObj = {
+    id: value.id,
+    name: value.name,
+    classification: value.classification,
+    hodName: value.hodName
+  };
+  console.log(addDepartmentDataObj);
+  
+  this.service.addDepartment(addDepartmentDataObj).subscribe((res) => {
+    console.log(res);
+    //addLtvlEmployeeDataObj = res.id;
+    this.posts.push(addDepartmentDataObj);
+    console.log(res);
+    this.formValue.reset();
+  });
+  
 this.getAllDepartmentData();
 }
 
@@ -205,12 +207,13 @@ this.getAllDepartmentData();
 //   });
 // }
 
-getUserData(data:any){
-  console.log(data);
-  this.service.addLtvlEmployee(data).subscribe((result)=>{
-    console.log(result);
-  })
-}
+// getUserData(data:any){
+//   console.log(data);
+//   this.service.addLtvlEmployee(data).subscribe((result)=>{
+//     console.log(result);
+//   })
+// }
+
 // delete(){
 //    this.service.deleteData().subscribe((result)=>{
 //      console.log("result",result);

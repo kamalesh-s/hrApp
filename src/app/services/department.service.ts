@@ -31,13 +31,13 @@ export class DepartmentService {
   //  }
 
 
-  addLtvlEmployee(data: any) {
-    return this.http.post(this.baseUrl+'AddDepartment', JSON.stringify(data)).pipe(
-      map((response: any) => {
-        return response;
-      })
-    );
-  }
+  // addLtvlEmployee(data: any) {
+  //   return this.http.post(this.baseUrl+'AddDepartment', JSON.stringify(data)).pipe(
+  //     map((response: any) => {
+  //       return response;
+  //     })
+  //   );
+  // }
 
   // getLtvlEmployee() {
   //      return this.http.get('assets/data.json')
@@ -60,6 +60,18 @@ export class DepartmentService {
                   return response;
                })
               );
+        }
+
+        addDepartment(data: any) {
+          return this.http.post<any>(this.baseUrl+'AddDepartment',data)
+        }
+
+        updateDepartment(data:any , id: number){
+          return this.http.put<any>(this.baseUrl+'UpdateDepartment/'+data.id ,data)
+        }
+
+        deleteDepartment(data:any, id: number ) {
+            return this.http.delete<any>(this.baseUrl+'DeleteDepartment/'+data.id ,data)
         }
 
   // updateData(data?: any, id?: number) {

@@ -56,20 +56,20 @@ export class LtvUploadDropdownComponent implements OnInit {
     {value: 'Department three-2', viewValue: 'Department three'}
   ];
 
-  addLtvlEmployeeData(){
-    // console.log(this.addEmployeeDataForm.value);
-    if(this.addEmployeeDataForm.valid){
-    this.service.addLtvlEmployee(this.addEmployeeDataForm.value)
-    .subscribe({
-      next:(res)=>{
-        alert("product added")
-      },
-      // error:()=>{
-      //   alert("error")
-      // }
-    })
-  }
-  }
+  // addLtvlEmployeeData(){
+  //   // console.log(this.addEmployeeDataForm.value);
+  //   if(this.addEmployeeDataForm.valid){
+  //   this.service.addLtvlEmployee(this.addEmployeeDataForm.value)
+  //   .subscribe({
+  //     next:(res)=>{
+  //       alert("product added")
+  //     },
+  //     // error:()=>{
+  //     //   alert("error")
+  //     // }
+  //   })
+  // }
+  // }
 
     //ADD DATA
  addLtvlEmployee(){
@@ -94,9 +94,6 @@ export class LtvUploadDropdownComponent implements OnInit {
     console.log(res);
     this.formValue.reset();
   });
-  
-  
-   this.getAllLtvlEmployeeData();
   }
  
 

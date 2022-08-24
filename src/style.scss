@@ -115,6 +115,9 @@ h2.CustomTitle {
     outline: none;
 }
 
+.mat-select {
+    font-family: "Source Sans Pro", source_sans_proregular, arial !important;
+}
 
 /**/
 
@@ -2021,11 +2024,11 @@ tr.mat-header-row{
     height: 42px !important;
 }
 .mat-form-field-appearance-standard .mat-form-field-flex{
-    padding-top: 0px;
+    padding-top: 0px !important;
 }
 .topContent .mat-select-placeholder {
     transition: color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1);
-    font-weight: 400!important;
+    font-weight: 500 !important;
     color: #043F6F !important;
     font-size: 14px !important;
 }
@@ -2053,18 +2056,39 @@ button.editBtn , .deleteBtn{
 
 @media (min-width: 768px) and (max-width: 991.98px) {
     .rightContent {
-        width: 80%;
+        width: 100%;
         margin-right: 1%;
+        padding: 20px 10px;
+    }
+    .contentContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .leftContent {
-        width: 10%;
-        margin-left: 1%;
+        width: 100%;
+        padding: 0px 20px;
+    }
+    .navTopContent {
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    .navTopContent .logo {
+        width: 18%;
+        text-align: left;
+        margin-top: 3px;
     }
     .desktopNav {
         display: none;
     }
     .tabNav {
         display: block;
+    }
+    .menuNav .material-icons{
+        font-size: 30px !important;
+        height: 30px !important;
+        width: 30px !important;
     }
     /* .logo img {
         width: 85%;
@@ -2099,7 +2123,7 @@ button.editBtn , .deleteBtn{
     }
     .logo img {
         width: 50%;
-        margin-bottom: 15px;
+        margin-bottom: 0px;
     }
     .menuNav {
         color: white;
@@ -2275,6 +2299,35 @@ button.editBtn , .deleteBtn{
         border-top: 1px solid #d6d6d6;
         border-bottom: 1px solid #d6d6d6;
     }
+    .ExportBtn {
+        font-size: 10px !important;
+        border-radius: 6px !important;
+        padding: 11px;
+        width: -moz-fit-content;
+        width: fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+    }
+    .mysidenav .logo{
+        width:100% !important;
+        text-align: center !important;
+    }
+    .sideNav .subTitle {
+        padding-bottom: 10px !important;
+        border-bottom: 1px solid white;
+    }
+    .navTopContent img{
+        width: 28%;
+    }
+    .pagesNav{
+        height: fit-content;
+    }
+    .popUpContainer{
+        width: 500px;
+    }
+    .mat-raised-button{
+        line-height: 0px !important;
+    }
 }
 
 
@@ -2295,6 +2348,48 @@ button.editBtn , .deleteBtn{
     }
     .tabNav {
         display: block;
+    }
+    .ExportBtn{
+        font-size: 10px !important;
+        border-radius: 6px !important;
+        padding: 11px;
+        width: -moz-fit-content;
+        width: fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+    }
+    .table th{
+        font-size: 12px;
+    }
+    .table tr td{
+        font-size: 10px;
+    }
+    button.editBtn[_ngcontent-ylt-c154], .deleteBtn[_ngcontent-ylt-c154] {
+        padding: 4px;
+        font-size: 10px;
+        border-radius: 2px;
+    }
+    .material-icons {
+        font-size: 14px !important;
+    }
+    .mat-icon {
+        height: 13px !important;
+        width: 13px !important;
+    }
+    .menuNav .material-icons{
+        font-size: 30px !important;
+        height: 30px !important;
+        width: 30px !important;
+    }
+    .sideNav .subTitle {
+        padding-bottom: 10px !important;
+        border-bottom: 1px solid white;
+    }
+    .navTopContent img{
+        width: 28%;
+    }
+    .pagesNav{
+        height: fit-content;
     }
     /* .logo img {
             width: 85%;
@@ -2329,7 +2424,7 @@ button.editBtn , .deleteBtn{
     }
     .logo img {
         width: 40%;
-        margin-bottom: 15px;
+        margin-bottom: 0px;
     }
     .menuNav {
         color: white;
@@ -2347,7 +2442,7 @@ button.editBtn , .deleteBtn{
         background-color: #0370c0;
         overflow-x: hidden;
         transition: 0.5s;
-        padding-top: 60px;
+        padding-top: 15px;
     }
     .mysidenav a {
         padding: 8px 8px 8px 32px;
@@ -2357,16 +2452,24 @@ button.editBtn , .deleteBtn{
         display: block;
         transition: 0.3s;
     }
+    .closebtn .mat-icon{
+        height: 30px !important;
+        width: 30px !important;
+        font-size: 28px !important;
+        border: 1px solid white;
+    }
     .mysidenav a:hover {
         color: #f1f1f1;
     }
     .mysidenav .closebtn {
         position: absolute;
         top: 0;
-        right: 15px;
+        right: 26px;
         font-size: 28px;
         margin-top: 18px;
         color: white;
+        width: 30px;
+        height: 30px;
     }
     .tabLogo {
         margin-top: 0px;
@@ -2462,12 +2565,12 @@ button.editBtn , .deleteBtn{
         padding-right: 8px;
     }
     .sidenavDropdown a {
-        font-size: 20px;
+        font-size: 14px;
         color: white;
         padding: 5px 0px;
         text-decoration: none;
         font-family: "Source Sans Pro", source_sans_proregular, arial;
-        font-weight: 800;
+        font-weight: 500;
         text-align: left;
     }
     .sidenavDropdown {
@@ -2500,6 +2603,17 @@ button.editBtn , .deleteBtn{
         padding-top: 20px;
         padding-bottom: 0px;
         background-color: #0370c0;
+    }
+    .pagesNav .mat-icon{
+        padding-right: 20px;
+    }
+    .sidenavDropdown .active {
+        background-color: #f9f9f9;
+        color: #043f6f;
+        box-shadow: none;
+    }
+    .navSubtitle{
+        padding-bottom: 0px;
     }
     .iconWrapper {
         border-top: 1px solid #d6d6d6;
@@ -2540,8 +2654,12 @@ button.editBtn , .deleteBtn{
     .mat-sort-header-arrow{
         margin: 0px !important;
     }
-    button.editBtn[_ngcontent-gka-c153], .deleteBtn[_ngcontent-gka-c153]{
+    button.editBtn, .deleteBtn{
         font-size: 10px !important;
+    }
+    .ExportBtn{
+        font-size: 10px;
+        height: fit-content;
     }
     .topContent_btn {
         display: flex;
@@ -2563,13 +2681,17 @@ button.editBtn , .deleteBtn{
     }
     .topContent .mat-select-placeholder{
         font-size: 10px !important;
+        font-weight: 500 !important;
     }
     .topContent {
         display: flex;
-        flex-direction: column;
+        //flex-direction: column;
     }
     .mainTitle{
         padding-bottom: 0px;
+    }
+    .mat-raised-button{
+        line-height: 0px !important;
     }
 }
 
@@ -2631,6 +2753,11 @@ button.editBtn , .deleteBtn{
     .mainTitle{
         padding-bottom: 0px;
     }
+    .menuNav .material-icons{
+        font-size: 30px !important;
+        height: 30px !important;
+        width: 30px !important;
+    }
     /* .logo img {
         width: 85%;
         margin-bottom: 8px;
@@ -2664,7 +2791,7 @@ button.editBtn , .deleteBtn{
     }
     .logo img {
         width: 55%;
-        margin-bottom: 15px;
+        margin-bottom: 0px;
     }
     .profileImg .logo {
         width: 100%;
@@ -2681,11 +2808,11 @@ button.editBtn , .deleteBtn{
         position: fixed;
         z-index: 1;
         top: 0;
-        right: 0;
+        left: 0;
         background-color: #0370c0;
         overflow-x: hidden;
         transition: 0.5s;
-        padding-top: 60px;
+        padding-top: 30px;
     }
     .mysidenav a {
         padding: 8px 8px 8px 32px;
@@ -2701,17 +2828,17 @@ button.editBtn , .deleteBtn{
     .mysidenav .closebtn {
         position: absolute;
         top: 0;
-        right: 15px;
+        right: 0px;
         font-size: 20px;
-        margin-top: 12px;
+        margin-top: 10px;
         color: white;
     }
     .sideNav .navTitle {
         color: white;
-        padding-top: 15px;
+        padding-top: 10px;
         line-height: 1;
         font-size: 16px;
-        padding-bottom: 8px;
+        padding-bottom: 0px;
     }
     .tabLogo {
         margin-top: 0px;
@@ -2728,7 +2855,19 @@ button.editBtn , .deleteBtn{
     }
     .sideNav .subTitle {
         font-size: 12px;
-        padding-bottom: 15px;
+        padding-bottom: 10px !important;
+        border-bottom: 1px solid white;
+    }
+    .sidenavDropdown .active {
+        background-color: #f9f9f9;
+        color: #043f6f;
+        box-shadow: none;
+    }
+    .pagesNav{
+        height: fit-content;
+    }
+    .pagesNav .mat-icon {
+        padding-right: 20px;
     }
     @media screen and (max-height: 450px) {
         .mysidenav {
@@ -2930,11 +3069,27 @@ button.editBtn , .deleteBtn{
         border: none;
         outline: none;
     }
+    .closebtn .mat-icon {
+        height: 24px !important;
+        width: 24px !important;
+        font-size: 24px !important;
+        border: 1px solid white;
+    }
     .material-icons {
         font-size: 13px !important;
     }
     .mat-icon {
         height: 12px !important;
         width: 14px !important;
+    }
+    .mat-paginator-icon{
+        width: 20px !important;
+    }
+    .mat-paginator{
+        font-size: 10px !important;
+        font-family: "Source Sans Pro", source_sans_proregular, arial;
+    }
+    .mat-raised-button{
+        line-height: 0px !important;
     }
 }
