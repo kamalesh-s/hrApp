@@ -67,11 +67,11 @@ export class NapsService {
      }
 
      updateContractEmployee(data:any , id: number){
-      return this.http.put<any>(this.baseUrl+'UpdateLtvlEmployee/'+data.id ,data)
+      return this.http.put<any>(this.baseUrl+'UpdateContractEmployee/'+data.id ,data)
     }
 
     deleteContractEmployee(data:any, id: number ) {
-      return this.http.delete<any>(this.baseUrl+'DeleteLtvlEmployee/'+data.id ,data)
+      return this.http.delete<any>(this.baseUrl+'DeleteContractEmployee/'+data.id ,data)
   }
 
 

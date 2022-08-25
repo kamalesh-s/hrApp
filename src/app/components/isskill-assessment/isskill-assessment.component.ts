@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { IsSkillAssessment } from 'src/app/interface/is-skill-assessment';
+import { IsSkillAssessmentService } from 'src/app/services/is-skill-assessment.service';
 
 @Component({
   selector: 'app-isskill-assessment',
@@ -6,10 +9,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./isskill-assessment.component.css']
 })
 export class ISSkillAssessmentComponent implements OnInit {
+  posts: any;
 
-  constructor() { }
+  constructor(private service : IsSkillAssessmentService) { }
+
+  displayedColumns: string[] = ['id','name', 'Primary Skill', 'AssessmentOne', 'ReviewOne','AssessmentTwo','ReviewTwo' ];
+  dataSource !: MatTableDataSource<IsSkillAssessment>;
 
   ngOnInit(): void {
+    this.getAllLtvlEmployeeData();
   }
+
+  //GET EMPLOYEE DATA
+getAllLtvlEmployeeData() {
+  this.service.getISSkillAssessment().subscribe((res:any) => {
+     this.posts = res;
+    console.log(this.posts)
+    this.dataSource = new MatTableDataSource(this.posts);
+  });
+}
+
+
 
 }

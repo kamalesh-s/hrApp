@@ -1,32 +1,17 @@
-<p>first-review works!</p>
 
-
+<div class="contentWrapper dataTableContentWrapper">
+    <div class="contentContainer">
+        <div class="appContainer"></div>
+        <div class="leftContent">
+          <app-side-nav-bar></app-side-nav-bar>
+          </div>
+    
 <div class="rightContent">
     <div class="topContent">
         <h2 class="title CustomTitle mainTitle">First Review</h2>
         <input class="searchField" type="text" placeholder="Search" id="popupField">
     </div>
-    <!-- <div class="bottomContent">
-       
-        <!-- <button class="Click-here addContent">+ Add Department</button> -->
-        <!-- <label class="dropdown">
-
-            <div class="dd-button">
-              + Add Department
-            </div>
-          
-            <input type="checkbox" class="dd-input" id="test">
-          
-            <ul class="dd-menu">
-              <li class="Click-here">Single upload</li>
-              <li class="Click-here-bulk-popup">Bulk upload</li>
-            </ul>
-            
-          </label>
-          
-          
-        </div> -->
-        
+  
         <div class="employee_detail">
             <div class="employee_detail_content">
                 <h2>Employee Name :</h2>
@@ -46,6 +31,39 @@
 
     <div class="table tableSpace">
         <table id="paragraphTable" class="display" style="width:100%">
+
+            <table  mat-table matTableExporter  #exporter="matTableExporter" [dataSource]="dataSource"  matSort class="mat-elevation-z8 tableDataContent">
+      
+                <ng-container matColumnDef="Skill Name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Skill Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.skillName}} </td>
+                </ng-container>
+            
+              <ng-container matColumnDef="Assessment 1 Level">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Assessment 1 Level </th>
+                <td mat-cell *matCellDef="let element" > {{element.firstAssessmentSkillLevel}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="Assessment 1 Training">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Assessment 1 Training </th>
+                <td mat-cell *matCellDef="let element"> {{element.firstAssessmentTrainingRec}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="Review 1 Level">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Review 1 Level </th>
+                <td mat-cell *matCellDef="let element"> {{element.firstReviewSkillLevel}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="Comments">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Comments</th>
+                <td mat-cell *matCellDef="let element"> {{element.Comments}} </td>
+                </ng-container>
+            
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> 
+            
+              </table>
 
         </table>
         <div class="portalSaveBtn">

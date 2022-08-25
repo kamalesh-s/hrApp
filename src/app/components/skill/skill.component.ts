@@ -46,15 +46,23 @@ getAllLtvlEmployeeData() {
 }
 
 
-editSkillPopup(){
-  this.dialog.open(SkillEditPopupComponent);
-}
-deleteSkillPopup(){
-  this.dialog.open(DeleteModalComponent);
+// editSkillPopup(){
+//   this.dialog.open(SkillEditPopupComponent);
+// }
+
+editSkillPopup(row :any) {
+  this.dialog.open(SkillEditPopupComponent,{
+    data:row
+  });
 }
 
-//Edit Upload popup
-openEditDialog(templateRef: TemplateRef<any>) {
-  this.dialog.open(templateRef);
+// deleteSkillPopup(){
+//   this.dialog.open(DeleteModalComponent);
+// }
+deleteSkillPopup(row :any) {
+  this.dialog.open(DeleteModalComponent,{
+    data:row
+  });
 }
+
 }

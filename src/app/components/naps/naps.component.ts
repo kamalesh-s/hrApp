@@ -12,6 +12,7 @@ import {Subscription} from 'rxjs';
 import {ShareDataService} from 'src/app/share-data.service';
 import { NapsEditPopupComponent } from './naps-edit-popup/naps-edit-popup.component';
 import { NapsDeletePopupComponent } from './naps-delete-popup/naps-delete-popup.component';
+import { NapsViewPopupComponent } from './naps-view-popup/naps-view-popup.component';
 
 @Component({
   selector: 'app-naps',
@@ -41,8 +42,8 @@ export class NapsComponent implements OnInit {
 
   displayedColumns: string[] = ['EmployeeName', 'DepartmentName','departmentId', 'Details','actions'];
 
-  applyFilter(event: Event) {
-  }
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+    @ViewChild(MatSort) sort!: MatSort;
   
 
   //Edit Upload popup
@@ -60,9 +61,17 @@ export class NapsComponent implements OnInit {
  }
 
  //View Detail
- viewDetail(templateRef: TemplateRef<any>){
-  this.dialog.open(templateRef);
-}
+//  viewDetail(templateRef: TemplateRef<any>){
+//   this.dialog.open(templateRef);
+// }
+viewDetail(row :any){
+  //this.dialog.open(LtvViewPopupComponent);
+    this.dialog.open(NapsViewPopupComponent, {
+    // Can be closed only by clicking the close button
+    disableClose: true,
+    data: row
+  });
+ }
 
 napsSingleUploadDialog(templateRef: TemplateRef<any>) {
   this.dialog.open(templateRef);
@@ -107,9 +116,20 @@ getAllNapsEmployeeData() {
      this.posts = res;
     console.log(this.posts)
     this.dataSource = new MatTableDataSource(this.posts);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort
   });
 }
 
+//Filter
+applyFilter(event: Event) {
+  const filterValue = (event.target as HTMLInputElement).value;
+  this.dataSource.filter = filterValue.trim().toLowerCase();
+
+  if (this.dataSource.paginator) {
+    this.dataSource.paginator.firstPage();
+  }
+}
 
 
 //ADD DATA

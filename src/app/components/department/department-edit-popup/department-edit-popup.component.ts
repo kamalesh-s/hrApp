@@ -17,24 +17,18 @@ export class DepartmentEditPopupComponent implements OnInit {
   ngOnInit(): void {
 
     this.updateFormValue = this.formBuilder.group({
+      id :['',Validators.required],
       name :['',Validators.required],
-      psNumber :['',Validators.required],
-      emailAddress :['',Validators.required],
-      mobilePhoneNumber :['',Validators.required],
-      immediateSupervisorEmployeeName :['',Validators.required],
-      plantLocation :['',Validators.required],
-      departmentName :['',Validators.required]
+      classification :['',Validators.required],
+      hodName :['',Validators.required]
     })
 
     //console.log(this.editData);
     if (this.editData){
+      this.updateFormValue.controls['id'].setValue(this.editData.id);
       this.updateFormValue.controls['name'].setValue(this.editData.name);
-      this.updateFormValue.controls['psNumber'].setValue(this.editData.psNumber);
-      this.updateFormValue.controls['emailAddress'].setValue(this.editData.emailAddress);
-      this.updateFormValue.controls['mobilePhoneNumber'].setValue(this.editData.mobilePhoneNumber);
-      this.updateFormValue.controls['immediateSupervisorEmployeeName'].setValue(this.editData.immediateSupervisorEmployeeName);
-      this.updateFormValue.controls['plantLocation'].setValue(this.editData.plantLocation);
-      this.updateFormValue.controls['departmentName'].setValue(this.editData.departmentName);
+      this.updateFormValue.controls['classification'].setValue(this.editData.classification);
+      this.updateFormValue.controls['hodName'].setValue(this.editData.hodName);
     }
   }
 

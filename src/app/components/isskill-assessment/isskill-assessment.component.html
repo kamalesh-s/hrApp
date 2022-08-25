@@ -1,1 +1,71 @@
-<p>isskill-assessment works!</p>
+
+<div class="contentWrapper dataTableContentWrapper">
+    <div class="contentContainer">
+        <div class="appContainer"></div>
+        <div class="leftContent">
+          <app-side-nav-bar></app-side-nav-bar>
+          </div>
+
+<div class="rightContent">
+    <div class="topContent">
+        <h2 class="title CustomTitle mainTitle">IS Skill Assessment</h2>
+        <input class="searchField" type="text" placeholder="Search">
+    </div>
+    <div class="table tableSpace">
+       
+        <table  mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter"  matSort class="mat-elevation-z8 tableDataContent">
+  
+            <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+        
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Employee Name </th>
+            <td mat-cell *matCellDef="let element" > {{element.name}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="Primary Skill">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Primary Skill </th>
+            <td mat-cell *matCellDef="let element"> {{element.psNumber}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="AssessmentOne">
+            <th mat-header-cell *matHeaderCellDef> Assessment 01</th>
+            <td mat-cell *matCellDef="let row" >
+              <button class="icon-space editBtn">Assessment</button> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ReviewOne">
+              <th mat-header-cell *matHeaderCellDef> Review 01</th>
+              <td mat-cell *matCellDef="let row" >
+                <button class="icon-space editBtn">Review</button> </td>
+              </ng-container>
+
+              <ng-container matColumnDef="AssessmentTwo">
+                <th mat-header-cell *matHeaderCellDef> Assessment 02</th>
+                <td mat-cell *matCellDef="let row" >
+                  <button class="icon-space editBtn">Assessment</button> </td>
+                </ng-container>
+
+                <ng-container matColumnDef="ReviewTwo">
+                  <th mat-header-cell *matHeaderCellDef> Review 02</th>
+                  <td mat-cell *matCellDef="let row" >
+                    <button class="icon-space editBtn">Review</button> </td>
+                  </ng-container>
+        
+          
+         
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> 
+        
+          </table>
+        <mat-paginator #paginator [pageSizeOptions]="[2, 4, 6]" showFirstLastButtons></mat-paginator>
+
+    </div>
+
+</div>
+
+</div>
+</div>

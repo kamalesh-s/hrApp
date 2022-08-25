@@ -55,6 +55,11 @@ import { SkillEditPopupComponent } from './components/skill/skill-edit-popup/ski
 import { ProductGroupEditPopupComponent } from './components/product-group-line/product-group-edit-popup/product-group-edit-popup.component';
 import { ProductGroupDeletePopupComponent } from './components/product-group-line/product-group-delete-popup/product-group-delete-popup.component';
 import { ProductUploadDropdownComponent } from './components/product-group-line/product-upload-dropdown/product-upload-dropdown.component';
+import { SkillMappingEditComponent } from './components/skill-mapping/skill-mapping-edit/skill-mapping-edit.component';
+import { SkillMappingDeleteComponent } from './components/skill-mapping/skill-mapping-delete/skill-mapping-delete.component';
+import { SkillMappingUploadDropdownComponent } from './components/skill-mapping/skill-mapping-upload-dropdown/skill-mapping-upload-dropdown.component';
+import { IsLocationManagementComponent } from './components/is-location-management/is-location-management.component';
+import { EmployeeSkillAssessmentComponent } from './components/employee-skill-assessment/employee-skill-assessment.component';
 
 
 
@@ -102,7 +107,12 @@ import { ProductUploadDropdownComponent } from './components/product-group-line/
     SkillEditPopupComponent,
     ProductGroupEditPopupComponent,
     ProductGroupDeletePopupComponent,
-    ProductUploadDropdownComponent
+    ProductUploadDropdownComponent,
+    SkillMappingEditComponent,
+    SkillMappingDeleteComponent,
+    SkillMappingUploadDropdownComponent,
+    IsLocationManagementComponent,
+    EmployeeSkillAssessmentComponent
   ],
   imports: [
     BrowserModule,

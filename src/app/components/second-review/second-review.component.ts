@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class SecondReviewComponent implements OnInit {
 
   constructor() { }
+  displayedColumns: string[] = ['Skill Name', 'Assessment 1 Level', 'Assessment 1 Training', 'Review 1 Level','Assessment 2 Level','Assessment 2 Training','Review 2','Comments' ];
 
   ngOnInit(): void {
   }
 
+  
 }

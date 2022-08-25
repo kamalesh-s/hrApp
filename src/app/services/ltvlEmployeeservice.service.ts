@@ -1,6 +1,6 @@
 
-import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { EventEmitter, Injectable, Output } from '@angular/core';
+import {HttpClient, HttpErrorResponse, HttpEventType, HttpHeaders} from '@angular/common/http';
 import { Observable, pipe } from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {ltvlEmployee} from 'src/app/interface/ltvlEmployee/ltvl-employee-interface';
@@ -25,7 +25,8 @@ export class LtvlEmployeeService {
   private baseUrl ='http://intellifer-001-site1.btempurl.com/api/HR/';
   
  // editData: any;
-  
+ @Output() public onUploadFinished = new EventEmitter(); 
+
   constructor(private http: HttpClient) { }
 
   // addLtvlEmployee(data: any) {
@@ -88,6 +89,44 @@ export class LtvlEmployeeService {
             return this.http.delete<any>(this.baseUrl+'DeleteLtvlEmployee/'+data.psNumber ,data)
         }
 
+        uploadFile = (files: any) => {
+          if (files.length === 0) {
+            return;
+          }
+          let fileToUpload = <File>files[0];
+          const formData = new FormData();
+          formData.append('file', fileToUpload, fileToUpload.name);
+          
+          this.http.post('http://intellifer-001-site1.btempurl.com/api/HR/Upload', formData, {reportProgress: true, observe: 'events'})
+            .subscribe({
+              next: (event) => {
+              
+               
+              if (event.type === HttpEventType.Response) {
+                
+                this.onUploadFinished.emit(event.body);
+              }
+            },
+            error: (err: HttpErrorResponse) => console.log(err)
+          });
+        }
+
+        download() { 
+          //return this.http.get('$(https://localhost:8080/api/HR/download?fileUrl=LtvlEmployeeTemplate.xlsx)', 
+          
+            this.http.get(`http://intellifer-001-site1.btempurl.com/api/HR/download?fileUrl=LtvlEmployeeTemplate.xlsx`,{
+              responseType: 'arraybuffer',} 
+             ).subscribe(response => this.downLoadFile(response, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"));
+          
+        }
+        downLoadFile(data: any, type: string) {
+          let blob = new Blob([data], { type: type});
+          let url = window.URL.createObjectURL(blob);
+          let pwa = window.open(url);
+          if (!pwa || pwa.closed || typeof pwa.closed == 'undefined') {
+              alert( 'Please disable your Pop-up blocker and try again.');
+          }
+        
   // updateData(data?: any, id?: number) {
   //   return this.http.patch(`${this.baseUrl}/${id}`, data).pipe(
   //     map((response: any) => {
@@ -128,4 +167,5 @@ export class LtvlEmployeeService {
 
 
 
+}
 }

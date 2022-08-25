@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild} from '@angular/core';
+import {MatAccordion} from '@angular/material/expansion';
 
 @Component({
   selector: 'app-first-assessment',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstAssessmentComponent implements OnInit {
 
+  @ViewChild(MatAccordion)
+  accordion!: MatAccordion;
+
+  displayedColumns: string[] = ['name', 'psNumber', 'emailAddress', 'departmentName' ];
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

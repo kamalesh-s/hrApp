@@ -10,6 +10,8 @@ import { ProductGroupService } from 'src/app/services/product-group-.service';
 //import { faPenToSquare , faTrash ,faTrashCan} from '@fortawesome/free-solid-svg-icons';
 import {Subscription} from 'rxjs';
 import {ShareDataService} from 'src/app/share-data.service';
+import { ProductGroupEditPopupComponent } from './product-group-edit-popup/product-group-edit-popup.component';
+import { ProductGroupDeletePopupComponent } from './product-group-delete-popup/product-group-delete-popup.component';
 
 
 @Component({
@@ -40,18 +42,25 @@ export class ProductGroupComponent implements OnInit {
 
   displayedColumns: string[] = ['Product Group','Product Line','Immediate Supervisor','Employee','Skill','Assessment','actions'];
 
+  displayedpopupColumns :string[] =['Employee ID','Employee Name' ,'Primary Skill'];
+
+  displayedSkillpopupColumns :string[] =['Skill ID','Skill Name','Criricality Level','Description']
   applyFilter(event: Event) {
   }
   
 
   //Edit Upload popup
-  openEditDialog(templateRef: TemplateRef<any>) {
-    this.dialog.open(templateRef);
+  openEditDialog(row :any) {
+    this.dialog.open(ProductGroupEditPopupComponent,{
+      data:row
+    });
   }
  
  //Delete Popup
-  openDeleteDialog(templateRef: TemplateRef<any>) {
-   this.dialog.open(templateRef);
+ openDeleteDialog(row :any){
+  this.dialog.open(ProductGroupDeletePopupComponent,{
+    data:row
+  });
  }
 
  //View Detail

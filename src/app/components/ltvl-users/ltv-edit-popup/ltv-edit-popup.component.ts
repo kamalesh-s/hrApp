@@ -108,6 +108,7 @@ export class LtvEditPopupComponent implements OnInit {
       next:(res)=>{
         alert("added");
         this.updateFormValue.reset();
+        //this.dialogRef.close('edit');
       }
       
     })

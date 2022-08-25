@@ -21,7 +21,7 @@
      
       <div class="singleUploadForm">
        
-        <div class="formLeftContent" >
+        <div class="formLeftContent"  [formGroup]="formValue">
           <mat-form-field appearance="fill">
             <mat-label>Skill ID</mat-label>
              <input name="id" formControlName="id" matInput>
@@ -31,7 +31,7 @@
             <input name="name" formControlName="name" matInput >
           </mat-form-field>
         </div>
-        <div class="formRightContent">
+        <div class="formRightContent" [formGroup]="formValue">
           <mat-form-field appearance="fill">
             <mat-label>Skill Definition</mat-label>
             <input name="definition" formControlName="definition" matInput >

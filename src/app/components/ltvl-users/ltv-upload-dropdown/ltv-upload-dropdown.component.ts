@@ -56,46 +56,63 @@ export class LtvUploadDropdownComponent implements OnInit {
     {value: 'Department three-2', viewValue: 'Department three'}
   ];
 
-  // addLtvlEmployeeData(){
-  //   // console.log(this.addEmployeeDataForm.value);
-  //   if(this.addEmployeeDataForm.valid){
-  //   this.service.addLtvlEmployee(this.addEmployeeDataForm.value)
-  //   .subscribe({
-  //     next:(res)=>{
-  //       alert("product added")
-  //     },
-  //     // error:()=>{
-  //     //   alert("error")
-  //     // }
-  //   })
-  // }
-  // }
+  addLtvlEmployee(){
+     console.log(this.formValue.value);
+    if(this.formValue.valid){
+    this.service.addLtvlEmployee(this.formValue.value)
+    .subscribe((res) =>{
+      alert("product added")
+    })
+    // .subscribe({
+    //   next:(res)=>{
+    //     alert("product added")
+    //   },
+    //    error:()=>{
+    //      alert("error")
+    //    }
+    // })
+  }
+  }
 
     //ADD DATA
- addLtvlEmployee(){
-  const { value } = this.formValue;
-  console.log(value);
+//  addLtvlEmployee(){
+//   const { value } = this.formValue;
+//   console.log(value);
   
-  let addLtvlEmployeeDataObj = {
-    psNumber: value.psNumber,
-    name: value.name,
-    departmentName: value.departmentName,
-    immediateSupervisorEmployeeName: value.immediateSupervisorEmployeeName,
-    emailAddress :value.emailAddress,
-    mobilePhoneNumber :value.mobilePhoneNumber,
-    plantLocation:value.plantLocation,
-  };
-  console.log(addLtvlEmployeeDataObj);
+//   let addLtvlEmployeeDataObj = {
+//     psNumber: value.psNumber,
+//     name: value.name,
+//     departmentName: value.departmentName,
+//     immediateSupervisorEmployeeName: value.immediateSupervisorEmployeeName,
+//     emailAddress :value.emailAddress,
+//     mobilePhoneNumber :value.mobilePhoneNumber,
+//     plantLocation:value.plantLocation,
+//   };
+//   console.log(addLtvlEmployeeDataObj);
   
-  this.service.addLtvlEmployee(addLtvlEmployeeDataObj).subscribe((res) => {
-    console.log(res);
-    //addLtvlEmployeeDataObj = res.id;
-    this.posts.push(addLtvlEmployeeDataObj);
-    console.log(res);
-    this.formValue.reset();
-  });
-  }
+//   this.service.addLtvlEmployee(addLtvlEmployeeDataObj).subscribe((res) => {
+//     console.log(res);
+//     //addLtvlEmployeeDataObj = res.id;
+//     this.posts.push(addLtvlEmployeeDataObj);
+//     console.log(res);
+//     console.log("completed...");
+//     this.formValue.reset();
+//   });
+//   }
  
+  download() {
+    this.service.download()//.subscribe((response) => {
+      //this.msg = response['msg'];
+      
+   // });
+  }
+  
+  uploadFile = (files: any) => {
+    this.service.uploadFile(files)//.subscribe((response) => {
+      //this.msg = response['msg'];
+      
+   // });
+  }
 
   // addLtvlEmployeeData(data:any){
   //   console.log(data)

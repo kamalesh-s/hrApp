@@ -10,6 +10,8 @@ import { SkillMappingService } from 'src/app/services/skill-mapping.service';
 //import { faPenToSquare , faTrash ,faTrashCan} from '@fortawesome/free-solid-svg-icons';
 import {Subscription} from 'rxjs';
 import {ShareDataService} from 'src/app/share-data.service';
+import { LtvEditPopupComponent } from '../ltvl-users/ltv-edit-popup/ltv-edit-popup.component';
+import { SkillMappingEditComponent } from './skill-mapping-edit/skill-mapping-edit.component';
 
 @Component({
   selector: 'app-skill-mapping',
@@ -44,10 +46,12 @@ export class SkillMappingComponent implements OnInit {
   
 
   //Edit Upload popup
-  openEditDialog(templateRef: TemplateRef<any>) {
-    this.dialog.open(templateRef);
+  openEditDialog(row :any) {
+    this.dialog.open(SkillMappingEditComponent,{
+      data:row
+    })
   }
- 
+
  //Delete Popup
   openDeleteDialog(templateRef: TemplateRef<any>) {
    this.dialog.open(templateRef);

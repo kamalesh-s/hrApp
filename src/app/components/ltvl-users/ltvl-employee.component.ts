@@ -28,8 +28,6 @@ export class LtvlUsersComponent implements OnInit {
   
   profileimage:string ="assets/img/profile-pic-2.jpg";
   // dataSource!: MatTableDataSource<ltvlEmployee>;
-
-  
  
   // LtvlEmployeeData :ltvlEmployee = new ltvlEmployee();
 
@@ -73,7 +71,11 @@ export class LtvlUsersComponent implements OnInit {
   openEditDialog(row :any) {
     this.dialog.open(LtvEditPopupComponent,{
       data:row
-    });
+    }).afterClosed().subscribe(val=>{
+      if(val ==='save'){
+        this.getAllLtvlEmployeeData();
+      }
+    })
   }
  
   
@@ -170,33 +172,36 @@ applyFilter(event: Event) {
 }
 
 
+
  //ADD DATA
- addLtvlEmployee(){
-  const { value } = this.formValue;
-  console.log(value);
+//  addLtvlEmployee(){
+//   const { value } = this.formValue;
+//   console.log(value);
   
-  let addLtvlEmployeeDataObj = {
-    psNumber: value.psNumber,
-    name: value.name,
-    departmentName: value.departmentName,
-    immediateSupervisorEmployeeName: value.immediateSupervisorEmployeeName,
-    emailAddress :value.emailAddress,
-    mobilePhoneNumber :value.mobilePhoneNumber,
-    plantLocation:value.plantLocation,
-  };
-  console.log(addLtvlEmployeeDataObj);
+//   let addLtvlEmployeeDataObj = {
+//     psNumber: value.psNumber,
+//     name: value.name,
+//     departmentName: value.departmentName,
+//     immediateSupervisorEmployeeName: value.immediateSupervisorEmployeeName,
+//     emailAddress :value.emailAddress,
+//     mobilePhoneNumber :value.mobilePhoneNumber,
+//     plantLocation:value.plantLocation,
+//   };
+//   console.log(addLtvlEmployeeDataObj);
   
-  this.service.addLtvlEmployee(addLtvlEmployeeDataObj).subscribe((res) => {
-    console.log(res);
-    //addLtvlEmployeeDataObj = res.id;
-    this.posts.push(addLtvlEmployeeDataObj);
-    console.log(res);
-    this.formValue.reset();
-  });
+//   this.service.addLtvlEmployee(addLtvlEmployeeDataObj).subscribe((res) => {
+//     console.log(res);
+//     //addLtvlEmployeeDataObj = res.id;
+//     this.posts.push(addLtvlEmployeeDataObj);
+//     console.log(res);
+   
+//     this.formValue.reset();
+    
+//   });
   
   
-  this.getAllLtvlEmployeeData();
-  }
+//   this.getAllLtvlEmployeeData();
+//   }
 
 
 

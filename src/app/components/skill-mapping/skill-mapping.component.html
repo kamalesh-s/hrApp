@@ -1,113 +1,14 @@
 
 
-<div class="topContent">
-    <h2 class="title CustomTitle mainTitle">LTVL Employee</h2>
-    <div class="topContent_btn">
-      <button class="btn btn-secondary drop-Btn ExportBtn ">Download Template</button>
-       
-      
-  <!--upload dropdown field-->
-  <mat-form-field class="dropDownBtn" appearance='outline'>
-    <mat-select name="countryReactiveVaraible"  placeholder="+ Add Department">
-      <mat-option (click)="napsSingleUploadDialog(napsSingleUploadPopup)">Single Upload</mat-option>
-      <mat-option (click)="napsBulkUploadDialog(napsBulkUploadPopup)"> Bulk Upload</mat-option>
-    </mat-select>
-  </mat-form-field>
-  
-  
-  <!--Single upload-->
-  <ng-template #napsSingleUploadPopup>
-    <div class="popUpContainer">
-      <h2 class="navTitle CustomTitle">Create Employee</h2>
-      
-      <div class="formContainer">
-         <!-- <form #f = "ngForm" name="form" (submit)="addLtvlEmployeeData(f)">  -->
-         
-        <div class="singleUploadForm">
-          <form [formGroup]="formValue">
-          <div class="formLeftContent" >
-            <mat-form-field appearance="fill">
-              <mat-label>Employee Name</mat-label>
-               <input  name="name" formControlName="name" matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label >PS Number</mat-label>
-              <!-- <input  [(ngModel)]="EmpData.ps_number" name="ps_number" matInput > -->
-              <input  name="psNumber" formControlName="psNumber" matInput >
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Email</mat-label>
-              <input  name="emailAddress"formControlName="emailAddress"  matInput >
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Mobile</mat-label>
-              <input  name="mobile" formControlName="mobilePhoneNumber"  matInput >
-            </mat-form-field>
-         
-          </div>
-          </form>
-          <form [formGroup]="formValue">
-          <div class="formRightContent">
-            <mat-form-field appearance="fill">
-              <mat-label>IS</mat-label>
-              <input  name="immediateSupervisorEmployeeName" formControlName="immediateSupervisorEmployeeName" matInput >
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Plant Location</mat-label>
-              <input  name="plantLocation" formControlName="plantLocation" matInput >
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-select placeholder="Department Name">
-                <mat-option *ngFor="let departmentName of departments" [value]="departmentName.value">
-                  {{departmentName.viewValue}} 
-                </mat-option>
-                
-              </mat-select>
-            </mat-form-field>
-          
-          </div>
-        </form>
-       
+<div class="contentWrapper dataTableContentWrapper">
+  <div class="contentContainer">
+      <div class="appContainer"></div>
+      <div class="leftContent">
+        <app-side-nav-bar></app-side-nav-bar>
         </div>
-       
-      </div>
-      <mat-dialog-actions align="end">
-        <button mat-button mat-dialog-close>Cancel</button>
-        <button mat-button  color="primary" (click)="addLtvlEmployee()" cdkFocusInitial>Save</button>
-      </mat-dialog-actions>
-       </div> 
-  
-  </ng-template>
-  
-  <!--Bulk Upload-->
-  <ng-template #napsBulkUploadPopup>
-  
-    <div class="popUpContainer">
-      <h2 class="navTitle CustomTitle">Attach Your Documents</h2>
-      <div class="popupContentWrapper">
-          <div class="popupContentContainer">
-              <div class="dragContainer">
-                  <div class="dragContent">
-                      <!-- <fa-icon [icon] ="faCloudArrowUp" class="uploadIcon">UPLOAD</fa-icon> -->
-                      <h3>Drag and drop here<br>or</h3>
-                       <button class="browseFilesBtn">Browse files</button> 
-                      <!-- <h3 class="dropFileBtn">Browse Files</h3> -->
-                  </div>
-              </div>
-          </div>
-      </div>
-      <mat-dialog-actions align="end">
-          <button mat-button mat-dialog-close>Cancel</button>
-          <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
-          <button mat-button color="primary">Upload</button>
-        </mat-dialog-actions>
-      </div>
-      
-  </ng-template>
-        
-    </div>
-  </div>
-  
+        <div class="rightContent">
+
+<app-skill-mapping-upload-dropdown></app-skill-mapping-upload-dropdown>  
   
   <div class="table">
     <table id="paragraphTable" class="display" style="width:100%">
@@ -126,9 +27,7 @@
     <!--Data Table-->
       <div class="mat-elevation-z8">
     <table  mat-table matTableExporter matTableFilter  [dataSource]="dataSource" #exporter="matTableExporter"  matSort>
-    
   
-      
       <ng-container matColumnDef="productGroup">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Product Group </th>
         <td mat-cell *matCellDef="let element" > {{element.productGroup}} </td>
@@ -148,8 +47,8 @@
     
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Actions </th>
-        <td mat-cell *matCellDef="let element" >
-           <button class="icon-space editBtn" (click)="openEditDialog(ltvlEmployeeEditPopup)">
+        <td mat-cell *matCellDef="let row" >
+           <button class="icon-space editBtn" (click)="openEditDialog(row)">
              <!-- <fa-icon [icon] ="faPenToSquare">edit</fa-icon> -->
              <mat-icon>edit</mat-icon>
             </button>
@@ -168,73 +67,8 @@
     
   
         <!--Employee Detail Edit popup-->
-        <ng-template #ltvlEmployeeEditPopup>
-        
-          <!-- <div class="" *ngIf="editPostModal"> -->
-          <div class="popUpContainer" >
-          <h2 class="navTitle CustomTitle">Edit Employee</h2>
-          <div class="formContainer " >
-        
-            <form [formGroup]="updateFormValue">
-             
-          <div class="formContentWrapper" >
-           
-            <div class="formLeftContent" >
-              <mat-form-field [formGroup]="updateFormValue" appearance="fill">
-              <mat-label>Employee Name</mat-label>
-              <input [(ngModel)]="editPostModal.name" formControlName="name" matInput  >
-              </mat-form-field>
-        
-              <!-- <mat-form-field [formGroup]="updateFormValue" appearance="fill"> -->
-              <mat-form-field [formGroup]="updateFormValue" appearance="fill">
-              <mat-label>PS Number</mat-label>
-              <input [(ngModel)]="editPostModal.psNumber" formControlName="psNumber" matInput >
-              </mat-form-field>
-              <mat-form-field  appearance="fill">
-              <mat-label  >Email</mat-label>
-              <input [(ngModel)]="editPostModal.emailAddress"  formControlName="emailAddress" matInput >
-              </mat-form-field>
-              <mat-form-field  appearance="fill">
-              <mat-label>Mobile</mat-label>
-              <input [(ngModel)]="editPostModal.mobilePhoneNumber" formControlName="mobilePhoneNumber" matInput >
-              </mat-form-field>
-              </div>
-            
-            
-              <div class="formRightContent" >
-              <mat-form-field   appearance="fill">
-              <mat-label>IS</mat-label>
-              <input [(ngModel)]="editPostModal.immediateSupervisorEmployeeName" formControlName="immediateSupervisorEmployeeName" matInput >
-              </mat-form-field>
-              <mat-form-field  appearance="fill">
-              <mat-label>Plant Location</mat-label>
-              <input [(ngModel)]="editPostModal.plantLocation" formControlName="plantLocation"  matInput >
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-select placeholder="Department Name">
-                  <mat-option *ngFor="let departmentName of departments" [value]="departmentName.value">
-                    {{departmentName.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            
-        
-          </div>
-        </form>
-        
-          </div>
-        
-              <mat-dialog-actions align="end">
-              <button mat-button mat-dialog-close>Cancel</button>
-        
-              <button mat-button  [mat-dialog-close]="true" color="primary" (click)="updatePost()" cdkFocusInitial>Save</button>
-              </mat-dialog-actions>
-          </div>
-        
-          </ng-template>
+       
   
-    
         <!--Employee Detail Delete Popup-->
         <ng-template #ltvlEmployeeDeletePopup>
           <div class="popUpContainer">

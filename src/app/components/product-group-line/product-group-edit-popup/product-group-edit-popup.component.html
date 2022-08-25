@@ -1,1 +1,35 @@
-<p>product-group-edit-popup works!</p>
+ <!--Employee Detail Edit popup-->
+        
+    <!-- <div class="" *ngIf="editPostModal"> -->
+    <div class="popUpContainer" >
+    <h2 class="navTitle CustomTitle">Edit Employee</h2>
+    <div class="formContainer " >
+  
+        <form > 
+            <div class="singleUploadForm">
+                <div class="formLeftContent" [formGroup]="updateFormValue">
+                <mat-form-field appearance="fill">
+                  <mat-label>productGroup</mat-label>
+                   <input name="productGroup" formControlName="productGroup"  matInput>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label >productLine</mat-label>
+                  <input name="productLine" formControlName="productLine"   matInput >
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-label>Email</mat-label>
+                  <input name="supervisorEmployeeName" formControlName="supervisorEmployeeName"   matInput >
+                </mat-form-field>
+              </div>
+            </div>
+           </form>
+  
+    </div>
+  
+        <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+  
+        <button mat-button  [mat-dialog-close]="true" color="primary" (click)="updateProduct()" cdkFocusInitial>Save</button>
+        </mat-dialog-actions>
+    </div>
+  

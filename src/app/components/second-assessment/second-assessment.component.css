@@ -1,0 +1,6 @@
+.tableContainer ,.table{
+    width:100%
+}
+table.mat-table.cdk-table.mat-sort.mat-elevation-z8.tableDataContent {
+    width: -webkit-fill-available;
+}

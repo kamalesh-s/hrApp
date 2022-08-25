@@ -1,0 +1,359 @@
+
+.ExportBtn select{
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-radius: 8px;
+    color: #043F6F !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+}
+.topContent_btn button:first-child{
+    margin-right: 12px;
+}
+.ExportBtn{
+    color: black !important;
+    background-color: white !important;
+    color: #043F6F !important;
+    /* padding: 10px 30px 10px 20px; */
+    font-weight: 500 !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    border: 1px solid #0d6efd ;
+    outline: none;
+}
+.ExportBtn:hover{
+    background-color: #0370c0 !important;
+    color: white !important;
+    border: 1px solid white !important;
+}
+.ExportBtn select option{
+    width: 100%;
+    padding: 30px;
+}
+.dropBtn_option{
+    padding: 30px;
+}
+.dropBtn_disabled{
+    color: gray;
+}
+.mat-form-field-flex {
+    color: red;
+}
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding-top: 5px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    opacity: 1;
+    color: white;
+}
+.dropDownBtn{
+    color:white;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #f8f9fa !important;
+}
+.not-empty-select.mat-selected {
+    color: green !important;
+  }
+  
+  :host /deep/ .mat-select-value-text {
+    color: green !important;
+  }
+
+  table {
+    width: 100%;
+  }
+  .table_top_content {
+    display: flex;
+    justify-content: space-between;
+}
+button.editBtn , .deleteBtn{
+  background-color: #02508c ;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.deleteBtn{
+  background-color: #ff5252;
+  margin-left: 5px;
+}
+.deleteIcon{
+    color: red;
+    font-size: 25px;
+}
+h2.CustomTitle{
+    margin-bottom: 0px !important;
+    text-align: left;
+}
+.deletePopupContentWrapper .popupContentContainer{
+    display: flex;
+    flex-direction: column;
+}
+.formContentWrapper ,.mat-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.formLeftContent ,.formRightContent{
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+}
+h2.CustomTitle{
+    margin-bottom: 15px !important;
+    text-align: left;
+}
+.mat-button.mat-primary{
+    color: white;
+    background-color: #043F6F;
+}
+.formContainer {
+    border: 1px solid black;
+    padding: 20px;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex{
+    height: 45px;
+}
+/* view popup */
+.mat-dialog-container{
+    padding:10px;
+}
+.popupContentWrapper{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+.popUpContainer{
+    position: sticky;
+    width: 500px
+}
+.popupContentContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.bulkUploadPopupContainer{
+    display: block;
+}
+.popupContentLeft ,.popupContentRight {
+    width: 48%;
+}
+/* .userInfoPopup .popupContent{
+margin-left: 0%;
+} */
+.popupContentRight{
+   justify-content: flex-end;
+}
+.popupContentLeft .popupContent{
+   margin-left: 0%;
+}
+/* .pop-up-content-wrap .navTitle{
+color: white;
+} */
+/* .popupContentWrapper{
+overflow: hidden;
+} */
+.popupContentContainer{
+  overflow: auto;
+}
+.custom-model-wrap{
+  border: none;
+}
+.popupContentWrapper{
+  border: 1px solid #bec4cee0;
+}
+.userprofileImage img {
+    border: 1px solid #ced4da;
+    padding: 8px;
+}
+.userInfoPopup .inputDetail {
+    color: #666666!important;
+    font-weight: 400 !important;
+}
+.popupSubTitle{
+    /* color: #000000 !important; */
+    font-weight: 400 !important;
+}
+.appPopupContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    pointer-events: none;
+    height: 160px;
+    background: -webkit-linear-gradient(0deg, #024d87 0%, #0370c0 100%) !important;
+}
+.custom-model-wrap{
+backdrop-filter: blur(43px) saturate(200%);
+-webkit-backdrop-filter: blur(19px) saturate(200%);
+/* background-color: #f8f9fa38; */
+border-radius: 12px;
+/* border: 1px solid rgba(209, 213, 219, 0.3); */
+}
+/* .pop-up-content-wrap .navTitle , .popupSubTitle{
+color: white !important;
+} */
+/* .popupContentWrapper {
+border: 1px solid #f9f9f9;
+} */
+@media (min-width: 1200px) and (max-width: 1280px) {
+.appPopupContainer{
+    height: 160px;
+}
+
+}
+@media (min-width: 991px) and (max-width: 1200px) {
+.appPopupContainer{
+    height: 160px;
+}
+
+}
+/* .userProfile img{
+    width: 30px;
+} */
+.popUpContainer{
+    width: 620px;
+}
+.userDetails {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.popUpContentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border: 1px solid #bec4cee0;
+    padding: 20px;
+}
+.userProfile {
+    width: 25%;
+}
+.userProfile img {
+    border: 1px solid #ced4da;
+    padding: 8px;
+    border-radius: 50%;
+}
+.mat-dialog-container{
+    background: none !important;
+}
+.popupSubTitle {
+    padding-bottom: 12px;
+}
+h2.CustomTitle{
+    margin-bottom: 0px !important;
+    text-align: left;
+}
+h3.popupSubTitle.inputDetail{
+    font-weight:500 !important
+}
+.userDetail .navTitle{
+    color: #fff;
+}
+h3.popupSubTitle.lastChild {
+    padding-bottom: 0px;
+}
+
+.mat-form-field-flex {
+    color: red;
+}
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding-top: 5px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    opacity: 1;
+    color: white;
+}
+.dropDownBtn{
+    color:white;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #f8f9fa !important;
+}
+.not-empty-select.mat-selected {
+    color: green !important;
+  }
+  
+  :host /deep/ .mat-select-value-text {
+    color: green !important;
+  }
+  
+/* single Upload */
+.singleUploadForm ,.mat-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.formLeftContent ,.formRightContent{
+  width: 46%;
+  display: flex;
+  flex-direction: column;
+}
+h2.CustomTitle{
+  margin-bottom: 15px !important;
+  text-align: center;
+}
+.mat-button.mat-primary{
+  color: white;
+  background-color: #043F6F;
+}
+.formContainer {
+  border: 1px solid black;
+  padding: 20px;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex{
+  height: 45px;
+}
+h2.CustomTitle{
+  margin-bottom: 15px !important;
+  text-align: center;
+}
+.mat-button.mat-primary{
+  color: white;
+  background-color: #043F6F;
+}
+.popupContentWrapper{
+  width: 450px;
+}
+.bulkUploadPopupContentWrapper{
+    width: 100%;
+}
+.uploadIcon{
+  font-size: 33px;
+  margin-bottom: 10px;
+  color: #043F6F;
+}
+
+@media (min-width: 575.98px) and (max-width: 768px){
+.ExportBtn {
+    font-size: 10px !important;
+    border-radius: 6px !important;
+    padding: 11px;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+}
+
+@media (max-width: 575.98px){
+.ExportBtn {
+    font-size: 10px !important;
+    border-radius: 6px !important;
+    padding: 11px;
+    width: fit-content;
+    height: fit-content;
+}
+}

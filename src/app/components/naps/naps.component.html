@@ -48,8 +48,8 @@
 
         <ng-container matColumnDef="Details">
           <th mat-header-cell *matHeaderCellDef> Details</th>
-          <td mat-cell *matCellDef="let element">
-            <button class="icon-space editBtn" (click)="viewDetail(ltvlEmployeeViewPopup)">View Details</button>
+          <td mat-cell *matCellDef="let row">
+            <button class="icon-space editBtn" (click)="viewDetail(row)">View Details</button>
           </td>
         </ng-container>
 
@@ -78,104 +78,7 @@
 
 
 
-      <!--View Employee Detail Popup-->
-      <ng-template #ltvlEmployeeViewPopup>
-        <div class="popUpContainer userDetail">
-          <div class="appPopupContainer"></div>
-          <h2 class="navTitle CustomTitle">Employee Details</h2>
-          <div class="popUpContentWrapper">
-            <div class="userProfile">
-              <img [src]="profileimage" alt="">
-            </div>
-            <div class="userDetails">
-              <div class="popupContentLeft">
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail">Employee Name :</h3>
-                  <h3 class="popupSubTitle">Amar </h3>
-
-                </div>
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail">PS Number :</h3>
-                  <h3 class="popupSubTitle">878765674 </h3>
-                </div>
-
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail ">Email :</h3>
-                  <h3 class="popupSubTitle ">amar@gmail.in </h3>
-                </div>
-
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail ">Mobile :</h3>
-                  <h3 class="popupSubTitle ">8787654320 </h3>
-                </div>
-
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail ">Qualification :</h3>
-                  <h3 class="popupSubTitle ">MCA </h3>
-                </div>
-
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail ">Date of Join :</h3>
-                  <h3 class="popupSubTitle ">14/8/2008 </h3>
-                </div>
-
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail lastChild">additionalSkills :</h3>
-                  <h3 class="popupSubTitle lastChild">Welding</h3>
-
-                </div>
-
-              </div>
-              <div class="popupContentRight">
-
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail">Department Name :</h3>
-                  <h3 class="popupSubTitle">Intellifer </h3>
-
-                </div>
-
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail">Department Classification :</h3>
-                  <h3 class="popupSubTitle">Intellifer </h3>
-
-                </div>
-
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail">Plant Location :</h3>
-                  <h3 class="popupSubTitle">Location-A </h3>
-
-                </div>
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail ">primarySkill :</h3>
-                  <h3 class="popupSubTitle ">Operating</h3>
-
-                </div>
-
-
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail ">productGroup :</h3>
-                  <h3 class="popupSubTitle ">AA</h3>
-
-                </div>
-
-                <div class="popupContent">
-                  <h3 class="popupSubTitle inputDetail lastChild">productLine :</h3>
-                  <h3 class="popupSubTitle lastChild">Welding</h3>
-
-                </div>
-
-
-              </div>
-
-            </div>
-          </div>
-
-          <mat-dialog-actions align="end">
-            <!-- <button mat-button mat-dialog-close>Cancel</button> -->
-            <button mat-button [mat-dialog-close]="true" color="primary" cdkFocusInitial>Close</button>
-          </mat-dialog-actions>
-        </div>
-      </ng-template>
+    
 
     </div>
 

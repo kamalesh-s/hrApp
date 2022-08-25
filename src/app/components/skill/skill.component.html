@@ -51,12 +51,12 @@
     
       <ng-container matColumnDef="Actions">
         <th mat-header-cell *matHeaderCellDef> Actions </th>
-        <td mat-cell *matCellDef="let element" >
-           <button class="icon-space editBtn" (click)="editSkillPopup()">
+        <td mat-cell *matCellDef="let row" >
+           <button class="icon-space editBtn" (click)="editSkillPopup(row)">
             <mat-icon>edit</mat-icon>
              <!-- <fa-icon [icon] ="faPenToSquare">edit</fa-icon> -->
             </button>
-            <button class="icon-space deleteBtn" (click)="deleteSkillPopup()" >
+            <button class="icon-space deleteBtn" (click)="deleteSkillPopup(row)" >
               <mat-icon>delete</mat-icon>
             <!-- <fa-icon [icon] ="faTrash">Delete</fa-icon> -->
             </button>

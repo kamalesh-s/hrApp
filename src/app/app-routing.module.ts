@@ -13,6 +13,9 @@ import { FirstReviewComponent } from './components/first-review/first-review.com
 import { FirstAssessmentComponent } from './components/first-assessment/first-assessment.component';
 import { SecondAssessmentComponent } from './components/second-assessment/second-assessment.component';
 import { SecondReviewComponent } from './components/second-review/second-review.component';
+import { ISSkillAssessmentComponent } from './components/isskill-assessment/isskill-assessment.component';
+import { IsLocationManagementComponent } from './components/is-location-management/is-location-management.component';
+import { EmployeeSkillAssessmentComponent } from './components/employee-skill-assessment/employee-skill-assessment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'ltvlUsers', pathMatch: 'full' },
@@ -28,7 +31,10 @@ const routes: Routes = [
    { path: 'firstAssessment', component: FirstAssessmentComponent },
    { path: 'secondAssessment', component: SecondAssessmentComponent },
    { path: 'firstReview', component: FirstReviewComponent },
+   { path: 'isSkillAssessment', component: ISSkillAssessmentComponent },
    { path: 'secondReview', component: SecondReviewComponent },
+   { path: 'isLocationManagement', component: IsLocationManagementComponent },
+   { path: 'employeeSkillAssessment', component: EmployeeSkillAssessmentComponent }
 ];
 
 @NgModule({

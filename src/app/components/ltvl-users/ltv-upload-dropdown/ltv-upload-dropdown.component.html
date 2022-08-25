@@ -3,7 +3,7 @@
 <div class="topContent">
     <h2 class="title CustomTitle mainTitle">LTV Employee</h2>
     <div class="topContent_btn">
-      <button class="btn btn-secondary drop-Btn ExportBtn ">Download Template</button>
+      <button class="btn btn-secondary drop-Btn ExportBtn" (click)="download()">Download Template</button>
        
       
   <!--upload dropdown field-->
@@ -150,20 +150,20 @@
         <div class="formLeftContent" [formGroup]="formValue">
           <mat-form-field appearance="fill">
             <mat-label>Employee Name</mat-label>
-             <input  name="name" formControlName="name" matInput>
+             <input  name="name" formControlName="name" matInput required>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label >PS Number</mat-label>
             <!-- <input  [(ngModel)]="EmpData.ps_number" name="ps_number" matInput > -->
-            <input  name="psNumber" formControlName="psNumber" matInput >
+            <input  name="psNumber" formControlName="psNumber" matInput required>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Email</mat-label>
-            <input  name="emailAddress"formControlName="emailAddress"  matInput >
+            <input  name="emailAddress"formControlName="emailAddress"  matInput required>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Mobile</mat-label>
-            <input  name="mobile" formControlName="mobilePhoneNumber"  matInput >
+            <input  name="mobile" formControlName="mobilePhoneNumber"  matInput required>
           </mat-form-field>
        
         </div>
@@ -172,14 +172,14 @@
         <div class="formRightContent" [formGroup]="formValue">
           <mat-form-field appearance="fill">
             <mat-label>IS</mat-label>
-            <input  name="immediateSupervisorEmployeeName" formControlName="immediateSupervisorEmployeeName" matInput >
+            <input  name="immediateSupervisorEmployeeName" formControlName="immediateSupervisorEmployeeName" matInput required>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Plant Location</mat-label>
-            <input  name="plantLocation" formControlName="plantLocation" matInput >
+            <input  name="plantLocation" formControlName="plantLocation" matInput required>
           </mat-form-field>
           <mat-form-field appearance="fill">
-            <mat-select placeholder="Department Name">
+            <mat-select placeholder="Department Name" name="departmentName" formControlName="departmentName" required>
               <mat-option *ngFor="let departmentName of departments" [value]="departmentName.value">
                 {{departmentName.viewValue}} 
               </mat-option>
@@ -211,7 +211,7 @@
                   <div class="dragContent">
                       <!-- <fa-icon [icon] ="faCloudArrowUp" class="uploadIcon">UPLOAD</fa-icon> -->
                       <h3>Drag and drop here<br>or</h3>
-                       <button class="browseFilesBtn">Browse files</button> 
+                       <button class="browseFilesBtn" >Browse files</button> 
                       <!-- <h3 class="dropFileBtn">Browse Files</h3> -->
                   </div>
               </div>

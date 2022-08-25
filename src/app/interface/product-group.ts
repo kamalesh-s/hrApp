@@ -6,3 +6,4 @@ export interface ProductGroup {
     "supervisorEmployeeName": "string",
     "createdOrUpdatedBy": "string"
 }
+

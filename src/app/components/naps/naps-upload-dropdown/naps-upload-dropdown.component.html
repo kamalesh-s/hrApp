@@ -151,31 +151,37 @@
         <div class="formLeftContent" [formGroup]="formValue">
             <mat-form-field appearance="fill">
               <mat-label>Employee Name</mat-label>
-              <input name="name" formControlName="name" matInput>
+              <input name="name" formControlName="name" matInput required>
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>DepartmentClassification</mat-label>
-              <input name="departmentClassification" formControlName="departmentClassification" matInput>
+              <input name="departmentClassification" formControlName="departmentClassification" matInput required>
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>ContractName</mat-label>
-              <input name="contractName" formControlName="contractName" matInput>
+              <input name="contractName" formControlName="contractName" matInput required>
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>Gender</mat-label>
-              <input name="gender" formControlName="gender" matInput>
+              <input name="gender" formControlName="gender" matInput required>
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>Type of Contract</mat-label>
-              <input name="type" formControlName="type" matInput>
+              <input name="type" formControlName="type" matInput required>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Certificates</mat-label>
-                <input name="certificates" formControlName="certificates" matInput>
+                <input name="certificates" formControlName="certificates" matInput required>
               </mat-form-field>
-              <mat-form-field appearance="fill">
+              <!-- <mat-form-field appearance="fill">
                 <mat-label>DateOfJoining</mat-label>
                 <input name="dateOfJoining" formControlName="dateOfJoining" matInput>
+              </mat-form-field> -->
+              <mat-form-field appearance="fill">
+                <mat-label>Date Of Joining</mat-label>
+                <input name="dateOfJoining" formControlName="dateOfJoining" matInput [matDatepicker]="picker" required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
           </div>
 
@@ -183,23 +189,23 @@
           <div class="formRightContent" [formGroup]="formValue">
             <mat-form-field appearance="fill">
               <mat-label>productGroup</mat-label>
-              <input name="productGroup" formControlName="productGroup" matInput>
+              <input name="productGroup" formControlName="productGroup" matInput required>
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>Plant Location</mat-label>
-              <input name="plantLocation" formControlName="plantLocation" matInput>
+              <input name="plantLocation" formControlName="plantLocation" matInput required>
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>PrimarySkill</mat-label>
-              <input name="primarySkill" formControlName="primarySkill" matInput>
+              <input name="primarySkill" formControlName="primarySkill" matInput required>
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>AdditionalSkills</mat-label>
-              <input name="additionalSkills" formControlName="additionalSkills" matInput>
+              <input name="additionalSkills" formControlName="additionalSkills" matInput required>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>productLine</mat-label>
-                <input name="productLine" formControlName="productLine" matInput>
+                <input name="productLine" formControlName="productLine" matInput required>
               </mat-form-field>
            
             <mat-form-field appearance="fill">
