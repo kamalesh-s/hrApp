@@ -71,11 +71,9 @@ export class LtvlUsersComponent implements OnInit {
   openEditDialog(row :any) {
     this.dialog.open(LtvEditPopupComponent,{
       data:row
-    }).afterClosed().subscribe(val=>{
-      if(val ==='save'){
-        this.getAllLtvlEmployeeData();
-      }
-    })
+    }).afterClosed().subscribe(result => {
+      this.getAllLtvlEmployeeData();
+    });
   }
  
   

@@ -14,7 +14,7 @@ export class IsSkillAssessmentService {
   constructor(private http: HttpClient) { }
 
   getISSkillAssessment(): Observable<IsSkillAssessment[]> {
-    return this.http.get(this.baseUrl+'GetAllSkillAssessmentDetailsForEmployee').pipe(
+    return this.http.get(this.baseUrl+'GetAllSkillAssessmentDetailsForEmployee?employeeId=334').pipe(
        map((response: any) => {
          return response;
       })

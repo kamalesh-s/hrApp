@@ -1,5 +1,4 @@
   <!--View Employee Detail Popup-->
-  <ng-template #ltvlEmployeeViewPopup>
     <div class="popUpContainer userDetail">
       <div class="appPopupContainer"></div>
       <h2 class="navTitle CustomTitle">Employee Details</h2>
@@ -13,35 +12,28 @@
               <h3 class="popupSubTitle inputDetail">Employee Name :</h3>
               <h3 class="popupSubTitle">{{data.name}} </h3>
             </div>
-            <div class="popupContent">
-              <h3 class="popupSubTitle inputDetail">PS Number :</h3>
-              <h3 class="popupSubTitle">878765674 </h3>
-            </div>
+           
 
-            <div class="popupContent">
-              <h3 class="popupSubTitle inputDetail ">Email :</h3>
-              <h3 class="popupSubTitle ">amar@gmail.in </h3>
-            </div>
-
-            <div class="popupContent">
-              <h3 class="popupSubTitle inputDetail ">Mobile :</h3>
-              <h3 class="popupSubTitle ">8787654320 </h3>
-            </div>
-
-            <div class="popupContent">
-              <h3 class="popupSubTitle inputDetail ">Qualification :</h3>
-              <h3 class="popupSubTitle ">MCA </h3>
-            </div>
 
             <div class="popupContent">
               <h3 class="popupSubTitle inputDetail ">Date of Join :</h3>
-              <h3 class="popupSubTitle ">14/8/2008 </h3>
+              <h3 class="popupSubTitle "> {{data.dateOfJoining}} </h3>
             </div>
 
             <div class="popupContent">
               <h3 class="popupSubTitle inputDetail lastChild">additionalSkills :</h3>
-              <h3 class="popupSubTitle lastChild">Welding</h3>
+              <h3 class="popupSubTitle lastChild">{{data.additionalSkills}}</h3>
 
+            </div>
+
+            <div class="popupContent">
+              <h3 class="popupSubTitle inputDetail ">productGroup :</h3>
+              <h3 class="popupSubTitle ">{{data.productGroup}}</h3>
+            </div>
+
+            <div class="popupContent">
+              <h3 class="popupSubTitle inputDetail lastChild">productLine :</h3>
+              <h3 class="popupSubTitle lastChild">{{data.productLine}}</h3>
             </div>
 
           </div>
@@ -49,38 +41,24 @@
 
             <div class="popupContent">
               <h3 class="popupSubTitle inputDetail">Department Name :</h3>
-              <h3 class="popupSubTitle">Intellifer </h3>
+              <h3 class="popupSubTitle">{{data.departmentName}} </h3>
 
             </div>
 
             <div class="popupContent">
               <h3 class="popupSubTitle inputDetail">Department Classification :</h3>
-              <h3 class="popupSubTitle">Intellifer </h3>
+              <h3 class="popupSubTitle">{{data.departmentClassification}} </h3>
 
             </div>
 
             <div class="popupContent">
               <h3 class="popupSubTitle inputDetail">Plant Location :</h3>
-              <h3 class="popupSubTitle">Location-A </h3>
+              <h3 class="popupSubTitle">{{data.plantLocation}} </h3>
 
             </div>
             <div class="popupContent">
               <h3 class="popupSubTitle inputDetail ">primarySkill :</h3>
-              <h3 class="popupSubTitle ">Operating</h3>
-
-            </div>
-
-
-            <div class="popupContent">
-              <h3 class="popupSubTitle inputDetail ">productGroup :</h3>
-              <h3 class="popupSubTitle ">AA</h3>
-
-            </div>
-
-            <div class="popupContent">
-              <h3 class="popupSubTitle inputDetail lastChild">productLine :</h3>
-              <h3 class="popupSubTitle lastChild">Welding</h3>
-
+              <h3 class="popupSubTitle ">{{data.primarySkill}}</h3>
             </div>
 
 
@@ -94,4 +72,3 @@
         <button mat-button [mat-dialog-close]="true" color="primary" cdkFocusInitial>Close</button>
       </mat-dialog-actions>
     </div>
-  </ng-template>

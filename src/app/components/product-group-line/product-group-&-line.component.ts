@@ -12,6 +12,7 @@ import {Subscription} from 'rxjs';
 import {ShareDataService} from 'src/app/share-data.service';
 import { ProductGroupEditPopupComponent } from './product-group-edit-popup/product-group-edit-popup.component';
 import { ProductGroupDeletePopupComponent } from './product-group-delete-popup/product-group-delete-popup.component';
+import { SkillPopupComponent } from './skill-popup/skill-popup.component';
 
 
 @Component({
@@ -44,7 +45,7 @@ export class ProductGroupComponent implements OnInit {
 
   displayedpopupColumns :string[] =['Employee ID','Employee Name' ,'Primary Skill'];
 
-  displayedSkillpopupColumns :string[] =['Skill ID','Skill Name','Criricality Level','Description']
+  
   applyFilter(event: Event) {
   }
   
@@ -64,8 +65,10 @@ export class ProductGroupComponent implements OnInit {
  }
 
  //View Detail
- viewDetail(templateRef: TemplateRef<any>){
-  this.dialog.open(templateRef);
+ viewDetail(row :any){
+  this.dialog.open(SkillPopupComponent,{
+    data:row
+  });
 }
 
 napsSingleUploadDialog(templateRef: TemplateRef<any>) {
@@ -117,32 +120,32 @@ getProductGroupLine() {
 
 
 //ADD DATA
-addLtvlEmployee(){
-const { value } = this.formValue;
-console.log(value);
+// addLtvlEmployee(){
+// const { value } = this.formValue;
+// console.log(value);
 
-let addLtvlEmployeeDataObj = {
-  psNumber: value.psNumber,
-  name: value.name,
-  departmentName: value.departmentName,
-  immediateSupervisorEmployeeName: value.immediateSupervisorEmployeeName,
-  emailAddress :value.emailAddress,
-  mobilePhoneNumber :value.mobilePhoneNumber,
-  plantLocation:value.plantLocation,
-};
-console.log(addLtvlEmployeeDataObj);
+// let addLtvlEmployeeDataObj = {
+//   psNumber: value.psNumber,
+//   name: value.name,
+//   departmentName: value.departmentName,
+//   immediateSupervisorEmployeeName: value.immediateSupervisorEmployeeName,
+//   emailAddress :value.emailAddress,
+//   mobilePhoneNumber :value.mobilePhoneNumber,
+//   plantLocation:value.plantLocation,
+// };
+// console.log(addLtvlEmployeeDataObj);
 
-this.service.addLtvlEmployee(addLtvlEmployeeDataObj).subscribe((res) => {
-  console.log(res);
-  addLtvlEmployeeDataObj = res.id;
-  this.posts.push(addLtvlEmployeeDataObj);
-  console.log(res);
-  this.formValue.reset();
-});
+// this.service.addLtvlEmployee(addLtvlEmployeeDataObj).subscribe((res) => {
+//   console.log(res);
+//   addLtvlEmployeeDataObj = res.id;
+//   this.posts.push(addLtvlEmployeeDataObj);
+//   console.log(res);
+//   this.formValue.reset();
+// });
 
 
-this.getProductGroupLine();
-}
+// this.getProductGroupLine();
+// }
 
 
 editModal(editPost: any) {

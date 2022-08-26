@@ -31,7 +31,10 @@ export class NapsUploadDropdownComponent implements OnInit {
       primarySkill:[''],
       additionalSkills:[''],
       departmentName:[''],
-      productLine:['']
+      productLine:[''],
+      id:[''],
+      departmentId:[''],
+      productKey:['']
     });
 
     this.addEmployeeDataForm = this.formBuilder.group({
@@ -48,6 +51,9 @@ export class NapsUploadDropdownComponent implements OnInit {
       additionalSkills :['',Validators.required],
       departmentName :['',Validators.required],
       productLine :['',Validators.required],
+      id :['',Validators.required],
+      departmentId :['',Validators.required],
+      productKey:['',Validators.required]
     })
   }
 
@@ -98,7 +104,11 @@ addContractEmployee(){
     primarySkill:value.primarySkill,
     additionalSkills:value.additionalSkills,
     departmentName:value.departmentName,
-    productLine:value.certificates,
+    productLine:value.productLine,
+    id:value.id,
+    departmentId:value.departmentId,
+    productKey:value.productKey
+    
   };
   console.log(addContractEmployeeDataObj);
   

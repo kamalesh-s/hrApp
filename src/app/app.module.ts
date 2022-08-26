@@ -60,6 +60,9 @@ import { SkillMappingDeleteComponent } from './components/skill-mapping/skill-ma
 import { SkillMappingUploadDropdownComponent } from './components/skill-mapping/skill-mapping-upload-dropdown/skill-mapping-upload-dropdown.component';
 import { IsLocationManagementComponent } from './components/is-location-management/is-location-management.component';
 import { EmployeeSkillAssessmentComponent } from './components/employee-skill-assessment/employee-skill-assessment.component';
+import { SkillPopupComponent } from './components/product-group-line/skill-popup/skill-popup.component';
+import { EmployeePopupComponent } from './components/product-group-line/employee-popup/employee-popup.component';
+import { ReviewOneComponent } from './components/review-one/review-one.component';
 
 
 
@@ -112,7 +115,10 @@ import { EmployeeSkillAssessmentComponent } from './components/employee-skill-as
     SkillMappingDeleteComponent,
     SkillMappingUploadDropdownComponent,
     IsLocationManagementComponent,
-    EmployeeSkillAssessmentComponent
+    EmployeeSkillAssessmentComponent,
+    SkillPopupComponent,
+    EmployeePopupComponent,
+    ReviewOneComponent
   ],
   imports: [
     BrowserModule,

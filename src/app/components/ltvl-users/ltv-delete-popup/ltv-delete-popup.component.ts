@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA ,MatDialog } from '@angular/material/dialog';
-import { SkillService } from 'src/app/services/skill.service';
+import { LtvlEmployeeService } from 'src/app/services/ltvlEmployeeservice.service';
 
 @Component({
   selector: 'app-ltv-delete-popup',
@@ -10,7 +10,7 @@ import { SkillService } from 'src/app/services/skill.service';
 
 export class LtvDeletePopupComponent implements OnInit {
 
-  constructor(private service : SkillService ,
+  constructor(private service : LtvlEmployeeService ,
     //  @Inject(MAT_DIALOG_DATA) public updateData:any
     @Inject(MAT_DIALOG_DATA) public data :any 
      ) { 
@@ -21,7 +21,7 @@ export class LtvDeletePopupComponent implements OnInit {
   }
 
   deleteLtvlEmployeeData( ){
-      this.service.deleteSkill(this.data ,this.data.id)
+      this.service.deleteLtvlEmployee(this.data ,this.data.psNumber)
     // //this.service.deleteLtvlEmployee(this.data.defaultValue,this.data.defaultValue.psNumber)
      .subscribe({
       next:(res)=>{

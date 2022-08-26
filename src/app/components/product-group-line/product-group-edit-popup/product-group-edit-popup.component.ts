@@ -9,6 +9,7 @@ import {ShareDataService} from 'src/app/share-data.service';
   templateUrl: './product-group-edit-popup.component.html',
   styleUrls: ['./product-group-edit-popup.component.css']
 })
+
 export class ProductGroupEditPopupComponent implements OnInit {
   updateFormValue: any;
   constructor(private service :ProductGroupService ,
@@ -20,7 +21,8 @@ export class ProductGroupEditPopupComponent implements OnInit {
     this.updateFormValue = this.formBuilder.group({
       productGroup :['',Validators.required],
       productLine :['',Validators.required],
-      supervisorEmployeeName :['',Validators.required]
+      supervisorEmployeeName :['',Validators.required],
+      supervisorEmployeeId :['',Validators.required]
     })
 
     //console.log(this.editData);
@@ -28,11 +30,12 @@ export class ProductGroupEditPopupComponent implements OnInit {
       this.updateFormValue.controls['productGroup'].setValue(this.editData.productGroup);
       this.updateFormValue.controls['productLine'].setValue(this.editData.productLine);
       this.updateFormValue.controls['supervisorEmployeeName'].setValue(this.editData.supervisorEmployeeName);
+      this.updateFormValue.controls['supervisorEmployeeId'].setValue(this.editData.supervisorEmployeeId);
     }
   }
 
   updateProduct(){
-    this.service.updateData(this.updateFormValue.value,this.editData.id)
+    this.service.updateProductGroup(this.updateFormValue.value,this.editData.id)
     .subscribe({
       next:(res)=>{
         alert("added");

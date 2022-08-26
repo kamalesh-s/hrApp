@@ -45,14 +45,14 @@ export class skillUploadDropdownComponent implements OnInit {
   
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
-      id: [''],
+      //id: [''],
       name: [''],
       definition: [''],
       criticalityLevel: [''],
     });
 
     this.addEmployeeDataForm = this.formBuilder.group({
-      id :['',Validators.required],
+      //id :['',Validators.required],
       name :['',Validators.required],
       definition :['',Validators.required],
       criticalityLevel :['',Validators.required],
@@ -75,7 +75,7 @@ export class skillUploadDropdownComponent implements OnInit {
   console.log(value);
   
   let addSkillDataObj = {
-    id: value.id,
+    //id: value.id,
     name: value.name,
     definition: value.definition,
     criticalityLevel: value.criticalityLevel,

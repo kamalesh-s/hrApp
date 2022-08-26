@@ -20,7 +20,8 @@ export class DepartmentEditPopupComponent implements OnInit {
       id :['',Validators.required],
       name :['',Validators.required],
       classification :['',Validators.required],
-      hodName :['',Validators.required]
+      hodName :['',Validators.required],
+      hodEmployeeId :['',Validators.required]
     })
 
     //console.log(this.editData);
@@ -28,6 +29,7 @@ export class DepartmentEditPopupComponent implements OnInit {
       this.updateFormValue.controls['id'].setValue(this.editData.id);
       this.updateFormValue.controls['name'].setValue(this.editData.name);
       this.updateFormValue.controls['classification'].setValue(this.editData.classification);
+      this.updateFormValue.controls['hodEmployeeId'].setValue(this.editData.hodEmployeeId);
       this.updateFormValue.controls['hodName'].setValue(this.editData.hodName);
     }
   }

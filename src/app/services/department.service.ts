@@ -67,7 +67,7 @@ export class DepartmentService {
         }
 
         updateDepartment(data:any , id: number){
-          return this.http.put<any>(this.baseUrl+'UpdateDepartment/'+data.id ,data)
+          return this.http.put(this.baseUrl+'UpdateDepartment/'+data.id ,data)
         }
 
         deleteDepartment(data:any, id: number ) {

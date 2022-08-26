@@ -177,11 +177,29 @@
                 <mat-label>DateOfJoining</mat-label>
                 <input name="dateOfJoining" formControlName="dateOfJoining" matInput>
               </mat-form-field> -->
-              <mat-form-field appearance="fill">
+              <!-- <mat-form-field appearance="fill">
                 <mat-label>Date Of Joining</mat-label>
                 <input name="dateOfJoining" formControlName="dateOfJoining" matInput [matDatepicker]="picker" required>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field> -->
+
+              <mat-form-field appearance="fill">
+                <mat-label>Date Of Joining</mat-label>
+                <input name="dateOfJoining" formControlName="dateOfJoining" matInput required>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Employee ID</mat-label>
+                <input name="id" formControlName="id" matInput required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Department ID</mat-label>
+                <input name="departmentId" formControlName="departmentId" matInput required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Product Key</mat-label>
+                <input name="productKey" formControlName="productKey" matInput required>
               </mat-form-field>
           </div>
 
@@ -207,6 +225,8 @@
                 <mat-label>productLine</mat-label>
                 <input name="productLine" formControlName="productLine" matInput required>
               </mat-form-field>
+
+           
            
             <mat-form-field appearance="fill">
               <mat-select placeholder="Department Name" name="departmentName" formControlName="departmentName">

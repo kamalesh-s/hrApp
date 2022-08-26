@@ -77,12 +77,25 @@ export class LtvlEmployeeService {
               );
         }
 
+        // updateLtvlEmployee(data?: any, id?: number) {
+        //   return this.http.patch(this.baseUrl+'UpdateLtvlEmployee/'+data.psNumber, data).pipe(
+        //     map((response: any) => {
+        //       return response.json;
+        //     })
+        //   );
+        // }
+      
+        // getLtvlEmployee(data : any) {
+        //       return this.http.get(this.baseUrl+'GetAllLtvlEmployees' ,data)
+        //   }
+  
+
         addLtvlEmployee(data: any) {
              return this.http.post<any>(this.baseUrl+'AddLtvlEmployee',data)
         }
 
         updateLtvlEmployee(data:any , psNumber: number){
-          return this.http.put<any>(this.baseUrl+'UpdateLtvlEmployee/'+data.psNumber ,data)
+          return this.http.put(this.baseUrl+'UpdateLtvlEmployee/'+data.psNumber ,data)
         }
 
         deleteLtvlEmployee(data:any, psNumber: number ) {
@@ -127,14 +140,7 @@ export class LtvlEmployeeService {
               alert( 'Please disable your Pop-up blocker and try again.');
           }
         
-  // updateData(data?: any, id?: number) {
-  //   return this.http.patch(`${this.baseUrl}/${id}`, data).pipe(
-  //     map((response: any) => {
-  //       return response.json;
-  //     })
-  //   );
-  // }
-
+ 
 
   //old code
   // updateData(data: any, id: number) {

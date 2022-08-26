@@ -178,14 +178,30 @@
             <mat-label>Plant Location</mat-label>
             <input  name="plantLocation" formControlName="plantLocation" matInput required>
           </mat-form-field>
+
           <mat-form-field appearance="fill">
-            <mat-select placeholder="Department Name" name="departmentName" formControlName="departmentName" required>
+            <mat-label>Department Name</mat-label>
+            <input name="departmentName" formControlName="departmentName" matInput required>
+          </mat-form-field>
+          
+          <mat-form-field appearance="fill">
+            <mat-label>Department ID</mat-label>
+            <input name="departmentId" formControlName="departmentId" matInput required>
+          </mat-form-field>
+
+          <!-- <mat-form-field appearance="fill">
+            <mat-label>department</mat-label>
+            <mat-select name="departmentName" formControlName="departmentName" placeholder="Department Name" required>
+
               <mat-option *ngFor="let departmentName of departments" [value]="departmentName.value">
                 {{departmentName.viewValue}} 
-              </mat-option>
+              </mat-option> -->
+              <!-- <mat-option value="departmentOne">department One</mat-option>
+              <mat-option value="departmentTwo">department two</mat-option>
+              <mat-option value="departmentThree">department three</mat-option>
               
             </mat-select>
-          </mat-form-field>
+          </mat-form-field> --> 
         
         </div>
      
@@ -194,7 +210,7 @@
     </div>
     <mat-dialog-actions align="end">
       <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button  color="primary" (click)="addLtvlEmployee()" cdkFocusInitial>Save</button>
+      <button mat-button  color="primary" (click)="addLtvlEmployee()" mat-dialog-close cdkFocusInitial>Save</button>
     </mat-dialog-actions>
      </div> 
 
@@ -220,7 +236,7 @@
       <mat-dialog-actions align="end">
           <button mat-button mat-dialog-close>Cancel</button>
           <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
-          <button mat-button color="primary">Upload</button>
+          <button mat-button mat-dialog-close color="primary">Upload</button>
         </mat-dialog-actions>
       </div>
       

@@ -16,6 +16,7 @@ import { SecondReviewComponent } from './components/second-review/second-review.
 import { ISSkillAssessmentComponent } from './components/isskill-assessment/isskill-assessment.component';
 import { IsLocationManagementComponent } from './components/is-location-management/is-location-management.component';
 import { EmployeeSkillAssessmentComponent } from './components/employee-skill-assessment/employee-skill-assessment.component';
+import { ReviewOneComponent } from './components/review-one/review-one.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'ltvlUsers', pathMatch: 'full' },
@@ -30,7 +31,7 @@ const routes: Routes = [
    { path: 'signIn', component: SignInComponent },
    { path: 'firstAssessment', component: FirstAssessmentComponent },
    { path: 'secondAssessment', component: SecondAssessmentComponent },
-   { path: 'firstReview', component: FirstReviewComponent },
+   { path: 'firstReview', component: ReviewOneComponent },
    { path: 'isSkillAssessment', component: ISSkillAssessmentComponent },
    { path: 'secondReview', component: SecondReviewComponent },
    { path: 'isLocationManagement', component: IsLocationManagementComponent },

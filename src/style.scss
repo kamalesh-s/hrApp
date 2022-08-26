@@ -785,7 +785,10 @@ button.browseFilesBtn {
     background-color: white;
     font-size: 18px;
 }
-
+.portalSaveBtn {
+    text-align: end;
+    margin-top: 20px;
+}
 button.browseFilesBtn:hover {
     border: 2px solid #024d87;
     box-shadow: none;

@@ -37,17 +37,17 @@ export class SkillMappingEditComponent implements OnInit {
     {value: 'Department three-2', viewValue: 'Department three'}
   ];
 
-  updatePost(){
-    this.service.updateData(this.updateFormValue.value,this.editData.id)
-    .subscribe({
-      next:(res)=>{
-        alert("added");
-        this.updateFormValue.reset();
-        //this.dialogRef.close('edit');
-      }
+  // updatePost(){
+  //   this.service.updateData(this.updateFormValue.value,this.editData.id)
+  //   .subscribe({
+  //     next:(res)=>{
+  //       alert("added");
+  //       this.updateFormValue.reset();
+  //       //this.dialogRef.close('edit');
+  //     }
       
-    })
+  //   })
     
-  }
+  // }
 
 }

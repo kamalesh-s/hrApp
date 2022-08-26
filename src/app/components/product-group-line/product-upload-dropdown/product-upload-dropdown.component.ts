@@ -19,13 +19,15 @@ export class ProductUploadDropdownComponent implements OnInit {
     this.formValue = this.formBuilder.group({
       productGroup: [''],
       productLine: [''],
-      supervisorEmployeeName: ['']
+      supervisorEmployeeName: [''],
+      supervisorEmployeeId: ['']
     });
 
     this.addEmployeeDataForm = this.formBuilder.group({
       productGroup :['',Validators.required],
       productLine :['',Validators.required],
-      supervisorEmployeeName :['',Validators.required]
+      supervisorEmployeeName :['',Validators.required],
+      supervisorEmployeeId :['',Validators.required]
     })
   }
 
@@ -45,12 +47,13 @@ export class ProductUploadDropdownComponent implements OnInit {
   let addLtvlEmployeeDataObj = {
     productGroup: value.productGroup,
     productLine: value.productLine,
-    supervisorEmployeeName: value.supervisorEmployeeName
+    supervisorEmployeeName: value.supervisorEmployeeName,
+    supervisorEmployeeId : value.supervisorEmployeeId
     
   };
   console.log(addLtvlEmployeeDataObj);
   
-  this.service.addLtvlEmployee(addLtvlEmployeeDataObj).subscribe((res) => {
+  this.service.addProductGroup(addLtvlEmployeeDataObj).subscribe((res) => {
     console.log(res);
     //addLtvlEmployeeDataObj = res.id;
     this.posts.push(addLtvlEmployeeDataObj);

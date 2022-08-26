@@ -13,6 +13,7 @@ import { Skill } from 'src/app/interface/skill';
 import {MatTableModule} from '@angular/material/table';
 import { DeleteModalComponent } from '../delete-modal/delete-modal.component';
 import { SkillEditPopupComponent } from './skill-edit-popup/skill-edit-popup.component';
+import { SkillDeletePopupComponent } from './skill-delete-popup/skill-delete-popup.component';
 //import { EditModalComponent } from '../edit-modal/edit-modal.component';
 
 
@@ -60,7 +61,7 @@ editSkillPopup(row :any) {
 //   this.dialog.open(DeleteModalComponent);
 // }
 deleteSkillPopup(row :any) {
-  this.dialog.open(DeleteModalComponent,{
+  this.dialog.open(SkillDeletePopupComponent,{
     data:row
   });
 }

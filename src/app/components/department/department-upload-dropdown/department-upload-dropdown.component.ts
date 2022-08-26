@@ -18,17 +18,19 @@ export class DepartmentUploadDropdownComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
-      id: [''],
+     // id: [''],
       name: [''],
       classification: [''],
       hodName: [''],
+      hodEmployeeId:['']
     });
 
     this.addDepartmentDataForm = this.formBuilder.group({
-      id :['',Validators.required],
+      //id :['',Validators.required],
       name :['',Validators.required],
       classification :['',Validators.required],
       hodName :['',Validators.required],
+      hodEmployeeId :['',Validators.required]
     })
   }
 
@@ -48,10 +50,11 @@ export class DepartmentUploadDropdownComponent implements OnInit {
   console.log(value);
   
   let addDepartmentDataObj = {
-    id: value.id,
+    //id: value.id,
     name: value.name,
     classification: value.classification,
-    hodName: value.hodName
+    hodName: value.hodName,
+    hodEmployeeId: value.hodEmployeeId
   };
   console.log(addDepartmentDataObj);
   

@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { LtvlEmployeeService } from 'src/app/services/ltvlEmployeeservice.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -13,7 +13,9 @@ import {ShareDataService} from 'src/app/share-data.service';
 export class LtvEditPopupComponent implements OnInit {
   updateFormValue: any;
   getAllLtvlEmployeeData: any;
- // editPostModal: any;
+ // editPostModal: any;\
+
+//  @Output() isUserAdded = new EventEmitter();
 
   constructor(private service :LtvlEmployeeService ,
      private formBuilder: FormBuilder , private shareData : ShareDataService ,
@@ -47,7 +49,7 @@ export class LtvEditPopupComponent implements OnInit {
       this.updateFormValue.controls['plantLocation'].setValue(this.editData.plantLocation);
       this.updateFormValue.controls['departmentName'].setValue(this.editData.departmentName);
     }
-   
+    //this.shareData.getAllLtvlEmployeeData();
   }
 
   departments= [
@@ -106,7 +108,9 @@ export class LtvEditPopupComponent implements OnInit {
     this.service.updateLtvlEmployee(this.updateFormValue.value,this.editData.id)
     .subscribe({
       next:(res)=>{
+        // this.isUserAdded.emit(this.updateFormValue);
         alert("added");
+        
         this.updateFormValue.reset();
         //this.dialogRef.close('edit');
       }

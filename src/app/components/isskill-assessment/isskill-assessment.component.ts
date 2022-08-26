@@ -17,11 +17,11 @@ export class ISSkillAssessmentComponent implements OnInit {
   dataSource !: MatTableDataSource<IsSkillAssessment>;
 
   ngOnInit(): void {
-    this.getAllLtvlEmployeeData();
+    this.getIsSkillAssessment();
   }
 
   //GET EMPLOYEE DATA
-getAllLtvlEmployeeData() {
+ getIsSkillAssessment() {
   this.service.getISSkillAssessment().subscribe((res:any) => {
      this.posts = res;
     console.log(this.posts)

@@ -10,6 +10,7 @@ export interface ltvlEmployee {
     // createdOrUpdatedBy: string,
     // plantLocation: string
 
+    
     "psNumber": 0,
     "name": "string",
     "departmentName": "string",

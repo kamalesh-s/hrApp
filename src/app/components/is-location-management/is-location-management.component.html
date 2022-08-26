@@ -11,7 +11,10 @@
             <div class="topContent">
                 <h2 class="title CustomTitle mainTitle">LTV Employee</h2>
                 </div>
-
+                
+                <div class="table tableSpace">
+       
+                  <div class="tableContainer">
                 <table  mat-table matTableExporter  #exporter="matTableExporter"  matSort class="mat-elevation-z8 tableDataContent">
   
                     <ng-container matColumnDef="Product Group">
@@ -35,6 +38,9 @@
                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> 
                 
                   </table>
+
+                </div>
+              </div>
 
             </div>
             </div>

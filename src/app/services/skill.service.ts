@@ -26,11 +26,11 @@ addSkill(data: any) {
   return this.http.post<any>(this.baseUrl+'AddSkill',data)
 }
 
-updateSkill(data:any , psNumber: number){
-return this.http.put<any>(this.baseUrl+'UpdateSkill/'+data.psNumber ,data)
+updateSkill(data:any , id: number){
+return this.http.put<any>(this.baseUrl+'UpdateSkill/'+data.id ,data)
 }
 
-deleteSkill(data:any, psNumber: number ) {
- return this.http.delete<any>(this.baseUrl+'DeleteSkill/'+data.psNumber ,data)
+deleteSkill(data:any, id: number ) {
+ return this.http.delete<any>(this.baseUrl+'DeleteSkill/'+data.id ,data)
 }
 }

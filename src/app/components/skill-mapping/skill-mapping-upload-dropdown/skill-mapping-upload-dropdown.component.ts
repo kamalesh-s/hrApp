@@ -1,7 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { LtvlEmployeeService } from 'src/app/services/ltvlEmployeeservice.service';
+import { SkillMappingService } from 'src/app/services/skill-mapping.service';
 
 
 @Component({
@@ -15,29 +15,22 @@ export class SkillMappingUploadDropdownComponent implements OnInit {
   formValue!: FormGroup;
   posts: any;
 
-  constructor(private  dialog:MatDialog , private service :LtvlEmployeeService , private formBuilder : FormBuilder) { }
+  constructor(private  dialog:MatDialog , private service :SkillMappingService , private formBuilder : FormBuilder) { }
 
   ngOnInit(): void {
 
     this.formValue = this.formBuilder.group({
-      userId: [''],
-      psNumber: [''],
-      name: [''],
-      departmentName: [''],
-      immediateSupervisorEmployeeName: [''],
-      emailAddress :[''],
-      mobilePhoneNumber :[''],
-      plantLocation:[''],
+      productGroup: [''],
+      productLine: [''],
+      skillName: [''],
+      skillId:['']
     });
 
     this.addEmployeeDataForm = this.formBuilder.group({
-      name :['',Validators.required],
-      psNumber :['',Validators.required],
-      emailAddress :['',Validators.required],
-      mobilePhoneNumber :['',Validators.required],
-      immediateSupervisorEmployeeName :['',Validators.required],
-      plantLocation :['',Validators.required],
-      departmentName :['',Validators.required]
+      productGroup :['',Validators.required],
+      productLine :['',Validators.required],
+      skillName :['',Validators.required],
+      skillId: ['',Validators.required]
     })
   }
 
@@ -54,5 +47,28 @@ export class SkillMappingUploadDropdownComponent implements OnInit {
     {value: 'Department two-1', viewValue: 'Department two'},
     {value: 'Department three-2', viewValue: 'Department three'}
   ];
+
+    //ADD DATA
+ addSkillMapping(){
+  const { value } = this.formValue;
+  console.log(value);
+  
+  let addLtvlEmployeeDataObj = {
+    productGroup: value.productGroup,
+    productLine: value.productLine,
+    skillName: value.skillName,
+    skillId: value.skillId
+  };
+  console.log(addLtvlEmployeeDataObj);
+  
+  this.service.addProductSkill(addLtvlEmployeeDataObj).subscribe((res) => {
+    // console.log(res);
+    // //addLtvlEmployeeDataObj = res.id;
+     this.posts.push(addLtvlEmployeeDataObj);
+    // console.log(res);
+    // console.log("completed...");
+    this.formValue.reset();
+  });
+  }
 
 }

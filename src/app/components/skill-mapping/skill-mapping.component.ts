@@ -12,6 +12,7 @@ import {Subscription} from 'rxjs';
 import {ShareDataService} from 'src/app/share-data.service';
 import { LtvEditPopupComponent } from '../ltvl-users/ltv-edit-popup/ltv-edit-popup.component';
 import { SkillMappingEditComponent } from './skill-mapping-edit/skill-mapping-edit.component';
+import { SkillMappingDeleteComponent } from './skill-mapping-delete/skill-mapping-delete.component';
 
 @Component({
   selector: 'app-skill-mapping',
@@ -53,8 +54,10 @@ export class SkillMappingComponent implements OnInit {
   }
 
  //Delete Popup
-  openDeleteDialog(templateRef: TemplateRef<any>) {
-   this.dialog.open(templateRef);
+  openDeleteDialog(row : any) {
+    this.dialog.open(SkillMappingDeleteComponent,{
+      data:row
+    })
  }
 
  //View Detail
@@ -126,7 +129,7 @@ let addLtvlEmployeeDataObj = {
 };
 console.log(addLtvlEmployeeDataObj);
 
-this.service.addLtvlEmployee(addLtvlEmployeeDataObj).subscribe((res) => {
+this.service.addProductSkill(addLtvlEmployeeDataObj).subscribe((res) => {
   console.log(res);
   addLtvlEmployeeDataObj = res.id;
   this.posts.push(addLtvlEmployeeDataObj);

@@ -7,20 +7,28 @@
   
         <form > 
             <div class="singleUploadForm">
-                <div class="formLeftContent" [formGroup]="updateFormValue">
+              <div class="formLeftContent productGroupContent" [formGroup]="updateFormValue">  
                 <mat-form-field appearance="fill">
-                  <mat-label>productGroup</mat-label>
-                   <input name="productGroup" formControlName="productGroup"  matInput>
+                  <mat-label>Product Group</mat-label>
+                   <input  name="productGroup" formControlName="productGroup" matInput>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
-                  <mat-label >productLine</mat-label>
-                  <input name="productLine" formControlName="productLine"   matInput >
+                  <mat-label >Product Line</mat-label>
+                  <!-- <input  [(ngModel)]="EmpData.ps_number" name="ps_number" matInput > -->
+                  <input  name="productLine" formControlName="productLine" matInput >
                 </mat-form-field>
+                 <mat-form-field appearance="fill">
+                  <mat-label>Supervisor ID </mat-label>
+                  <input  name="supervisorEmployeeId" formControlName="supervisorEmployeeId"  matInput >
+                </mat-form-field> 
+    
                 <mat-form-field appearance="fill">
-                  <mat-label>Email</mat-label>
-                  <input name="supervisorEmployeeName" formControlName="supervisorEmployeeName"   matInput >
+                  <mat-label>Supervisor  Name</mat-label>
+                  <input  name="supervisorEmployeeName" formControlName="supervisorEmployeeName"  matInput >
                 </mat-form-field>
-              </div>
+    
+             
+              </div> 
             </div>
            </form>
   

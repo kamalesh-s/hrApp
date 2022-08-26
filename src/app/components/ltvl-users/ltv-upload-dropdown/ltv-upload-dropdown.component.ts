@@ -2,6 +2,8 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { LtvlEmployeeService } from 'src/app/services/ltvlEmployeeservice.service';
+import { LtvEditPopupComponent } from '../ltv-edit-popup/ltv-edit-popup.component';
+import { LtvViewPopupComponent } from '../ltv-view-popup/ltv-view-popup.component';
 
 @Component({
   selector: 'app-ltv-upload-dropdown',
@@ -28,6 +30,7 @@ export class LtvUploadDropdownComponent implements OnInit {
       emailAddress :[''],
       mobilePhoneNumber :[''],
       plantLocation:[''],
+      departmentId:['']
     });
 
     this.addEmployeeDataForm = this.formBuilder.group({
@@ -37,7 +40,8 @@ export class LtvUploadDropdownComponent implements OnInit {
       mobilePhoneNumber :['',Validators.required],
       immediateSupervisorEmployeeName :['',Validators.required],
       plantLocation :['',Validators.required],
-      departmentName :['',Validators.required]
+      departmentName :['',Validators.required],
+      departmentId :['',Validators.required]
     })
 
   }
@@ -51,54 +55,58 @@ export class LtvUploadDropdownComponent implements OnInit {
   }
 
   departments= [
-    {value: 'Department One-0', viewValue: 'Department One'},
-    {value: 'Department two-1', viewValue: 'Department two'},
-    {value: 'Department three-2', viewValue: 'Department three'}
+    {value: 'Department One', viewValue: 'Department One'},
+    {value: 'Department two', viewValue: 'Department two'},
+    {value: 'Department three', viewValue: 'Department three'}
   ];
 
-  addLtvlEmployee(){
-     console.log(this.formValue.value);
-    if(this.formValue.valid){
-    this.service.addLtvlEmployee(this.formValue.value)
-    .subscribe((res) =>{
-      alert("product added")
-    })
-    // .subscribe({
-    //   next:(res)=>{
-    //     alert("product added")
-    //   },
-    //    error:()=>{
-    //      alert("error")
-    //    }
-    // })
-  }
-  }
+
+  //   addLtvlEmployee(){
+  //    //console.log(this.formValue.value);
+  //   if(this.formValue.valid){
+  //   this.service.addLtvlEmployee(this.formValue.value)
+  //   // .subscribe((res) =>{
+  //   //   console.log("completedd");
+  //   // })
+  //   .subscribe({
+  //     next:(res)=>{
+  //       this.dialog.open(LtvEditPopupComponent)
+  //       alert("product added")
+  //     },
+     
+  //     //  error:()=>{
+  //     //    alert("error")
+  //     //  }
+  //   })
+  // }
+  // }
 
     //ADD DATA
-//  addLtvlEmployee(){
-//   const { value } = this.formValue;
-//   console.log(value);
+ addLtvlEmployee(){
+  const { value } = this.formValue;
+  console.log(value);
   
-//   let addLtvlEmployeeDataObj = {
-//     psNumber: value.psNumber,
-//     name: value.name,
-//     departmentName: value.departmentName,
-//     immediateSupervisorEmployeeName: value.immediateSupervisorEmployeeName,
-//     emailAddress :value.emailAddress,
-//     mobilePhoneNumber :value.mobilePhoneNumber,
-//     plantLocation:value.plantLocation,
-//   };
-//   console.log(addLtvlEmployeeDataObj);
+  let addLtvlEmployeeDataObj = {
+    psNumber: value.psNumber,
+    name: value.name,
+    departmentName: value.departmentName,
+    immediateSupervisorEmployeeName: value.immediateSupervisorEmployeeName,
+    emailAddress :value.emailAddress,
+    mobilePhoneNumber :value.mobilePhoneNumber,
+    plantLocation:value.plantLocation,
+    departmentId : value.departmentId
+  };
+  console.log(addLtvlEmployeeDataObj);
   
-//   this.service.addLtvlEmployee(addLtvlEmployeeDataObj).subscribe((res) => {
-//     console.log(res);
-//     //addLtvlEmployeeDataObj = res.id;
-//     this.posts.push(addLtvlEmployeeDataObj);
-//     console.log(res);
-//     console.log("completed...");
-//     this.formValue.reset();
-//   });
-//   }
+  this.service.addLtvlEmployee(addLtvlEmployeeDataObj).subscribe((res) => {
+    // console.log(res);
+    // //addLtvlEmployeeDataObj = res.id;
+     this.posts.push(addLtvlEmployeeDataObj);
+    // console.log(res);
+    // console.log("completed...");
+    this.formValue.reset();
+  });
+  }
  
   download() {
     this.service.download()//.subscribe((response) => {

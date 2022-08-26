@@ -16,7 +16,7 @@ export class SkillDeletePopupComponent implements OnInit {
   }
 
   deleteSkill( ){
-    this.service.deleteSkill(this.data ,this.data.psNumber)
+    this.service.deleteSkill(this.data ,this.data.id)
   // //this.service.deleteLtvlEmployee(this.data.defaultValue,this.data.defaultValue.psNumber)
    .subscribe({
     next:(res)=>{

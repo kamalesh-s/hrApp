@@ -297,7 +297,7 @@ h3.popupSubTitle.lastChild {
   width: 100%;
 }
 .formLeftContent ,.formRightContent{
-  width: 46%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }

@@ -24,15 +24,20 @@
          <div class="singleUploadForm">
           <!-- <form [formGroup]="formValue"> -->
           <div class="formLeftContent" [formGroup]="formValue">
-            <mat-form-field appearance="fill">
-              <mat-label>Department ID</mat-label>
+            <!-- <mat-form-field appearance="fill"> 
+               <mat-label>Department ID</mat-label>
                <input   name="id" formControlName="id" matInput>
-            </mat-form-field>
+            </mat-form-field>   -->
             <mat-form-field appearance="fill">
               <mat-label>Department Name</mat-label>
                <input   name="name" formControlName="name" matInput>
             </mat-form-field>
+             <mat-form-field appearance="fill">
+              <mat-label>HOD Employee ID</mat-label>
+              <input  name="hodEmployeeId" formControlName="hodEmployeeId"  matInput >
+            </mat-form-field> 
           </div>
+
           <!-- </form>
           <form [formGroup]="formValue"> -->
           <div class="formRightContent" [formGroup]="formValue">
